@@ -3,8 +3,8 @@ const sql = require('mssql');
 const config = {
     user: 'sa',
     password: 'r62af79a',
-    server: 'DESKTOP-8QIU37S\\SQLEXPRESS',
-    //server: 'VIRTUALPC\\SQLEXPRESS',
+    //server: 'LAPTOP-C6AMNR9V\\SQLEXPRESS',
+    server: 'VIRTUALPC\\SQLEXPRESS',
     database: 'Centro_Salud',
     options: {
         encrypt: false,

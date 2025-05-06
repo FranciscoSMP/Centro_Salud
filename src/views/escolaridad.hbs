@@ -1,0 +1,12 @@
+{{!-- {{#ifCond user.Id_Rol '==' 1}} <!-- Solo Admin puede ver este formulario --> --}}
+    <h2>Añadir Escolaridad</h2>
+    <form action="/escolaridad/guardar/escolaridad" method="POST">
+        <div class="form-group">
+            <label for="Nivel_Escolaridad">Nivel de Escolaridad</label>
+            <input type="text" name="Nivel_Escolaridad" id="Nivel_Escolaridad" required>
+        </div>
+        <button type="submit">Añadir</button>
+    </form>
+{{!-- {{else}}
+    <p>No tienes permiso para añadir departamentos.</p>
+{{/ifCond}} --}}

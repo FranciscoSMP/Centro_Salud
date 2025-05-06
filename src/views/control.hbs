@@ -1,0 +1,13 @@
+{{!-- {{#ifCond user.Id_Rol '==' 1}} <!-- Solo Admin puede ver este formulario --> --}}
+    <h2>Añadir Control</h2>
+    <form action="/control/guardar/control" method="POST">
+        <div class="form-group">
+            <label for="Tipo_Control">Nombre del Control</label>
+            <input type="text" name="Tipo_Control" id="Tipo_Control" required>
+        </div>
+        <button type="submit">Añadir</button>
+    </form>
+{{!-- {{else}}
+    <p>No tienes permiso para añadir departamentos.</p>
+{{/ifCond}} --}}
+    </form>

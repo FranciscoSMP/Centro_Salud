@@ -1,0 +1,175 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #007bff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffdd57 !important;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mt {
+    margin-top: 10% !important;
+}
+
+.index-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.index-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.welcome-btn {
+    font-size: 1.2rem;
+    padding: 10px 10px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.welcome-btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Ajustes para la tipografía */
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilos para la página de inicio de sesión */
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.login-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: none;
+}
+
+.login-btn {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 12px;
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Ajustes adicionales */
+.alert-danger {
+    font-size: 0.9rem;
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para la barra de navegación personalizada */
+.navbar {
+    background-color: #e3f2fd; /* Color de fondo personalizado */
+    border-bottom: 1px solid #d1d1d1; /* Opcional: agregar una línea inferior para separación */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+}
+
+.navbar-nav .nav-link.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0056b3;
+}
+
+/* Estilo para el botón de navegación */
+.navbar-toggler {
+    border-color: #007bff;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,...'); /* Asegúrate de que el icono de hamburguesa se ajuste al diseño */
+}

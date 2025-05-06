@@ -1,0 +1,13 @@
+{{!-- {{#ifCond user.Id_Rol '==' 1}} <!-- Solo Admin puede ver este formulario --> --}}
+    <h2>Añadir Profesion</h2>
+    <form action="/profesion/guardar/profesion" method="POST">
+        <div class="form-group">
+            <label for="Profesion_Oficio">Nombre de la Profesion</label>
+            <input type="text" name="Profesion_Oficio" id="Profesion_Oficio" required>
+        </div>
+        <button type="submit">Añadir</button>
+    </form>
+{{!-- {{else}}
+    <p>No tienes permiso para añadir departamentos.</p>
+{{/ifCond}} --}}
+    </form>

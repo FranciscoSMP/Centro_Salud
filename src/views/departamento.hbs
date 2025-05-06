@@ -1,0 +1,12 @@
+{{!-- {{#ifCond user.Id_Rol '==' 1}} <!-- Solo Admin puede ver este formulario --> --}}
+    <h2>Añadir Departamento</h2>
+    <form action="/departamento/guardar/departamento" method="POST">
+        <div class="form-group">
+            <label for="Nombre_Departamento">Nombre del Departamento</label>
+            <input type="text" name="Nombre_Departamento" id="Nombre_Departamento" required>
+        </div>
+        <button type="submit">Añadir</button>
+    </form>
+{{!-- {{else}}
+    <p>No tienes permiso para añadir departamentos.</p>
+{{/ifCond}} --}}
