@@ -17,3 +17,13 @@ const guardarDatos = (model, redirect) => async (req, res) => {
 exports.pacienteConsulta = renderView('pacienteConsulta');
 
 exports.addPacienteConsulta = guardarDatos(pacienteConsultaModel.addPacienteConsulta, '/paciente_consulta/table');
+
+exports.getPacienteConsulta = async (req, res) => {
+    try {
+        const pacienteConsulta = await pacienteConsultaModel.getPacienteConsulta();
+        res.render('pacienteConsulta_table', { pacienteConsulta });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener las relaciones');
+    }
+};

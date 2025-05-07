@@ -17,3 +17,13 @@ const guardarDatos = (model, redirect) => async (req, res) => {
 exports.control = renderView('control');
 
 exports.addControl = guardarDatos(controlModel.addControl, '/control/table');
+
+exports.getControl = async (req, res) => {
+    try {
+        const control = await controlModel.getControl();
+        res.render('control_table', { control });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener los controles');
+    }
+};

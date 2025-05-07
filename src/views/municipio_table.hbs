@@ -1,0 +1,23 @@
+<h2>Lista de Municipio</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Municipio</th>
+            <th>ID Departamento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each municipio}}
+        <tr>
+            <td>{{this.Id_Municipio}}</td>
+            <td>{{this.Nombre_Municipio}}</td>
+            <td>{{this.Id_Departamento}}</td>
+            <td>
+                <a href="/municipio/editar/{{this.Id_Municipio}}">Editar</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

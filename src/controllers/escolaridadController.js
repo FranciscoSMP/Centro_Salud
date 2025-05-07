@@ -17,3 +17,13 @@ const guardarDatos = (model, redirect) => async (req, res) => {
 exports.escolaridad = renderView('escolaridad');
 
 exports.addEscolaridad = guardarDatos(escolaridadModel.addEscolaridad, '/escolaridad/table');
+
+exports.getEscolaridad = async (req, res) => {
+    try {
+        const escolaridad = await escolaridadModel.getEscolaridad();
+        res.render('escolaridad_table', { escolaridad });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener Escolaridades');
+    }
+};

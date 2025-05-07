@@ -17,3 +17,13 @@ const guardarDatos = (model, redirect) => async (req, res) => {
 exports.enfermero = renderView('enfermero');
 
 exports.addEnfermero = guardarDatos(enfermeroModel.addEnfermero, '/enfermero/table');
+
+exports.getEnfermero = async (req, res) => {
+    try {
+        const enfermeros = await enfermeroModel.getEnfermero();
+        res.render('enfermero_table', { enfermeros });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener enfermeros');
+    }
+};

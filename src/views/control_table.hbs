@@ -1,0 +1,17 @@
+<h2>Lista de Controles</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Control</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each control}}
+        <tr>
+            <td>{{this.Id_Control}}</td> <!-- Asegúrate de que los campos coincidan con la base de datos -->
+            <td>{{this.Tipo_Control}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

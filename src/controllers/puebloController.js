@@ -17,3 +17,13 @@ const guardarDatos = (model, redirect) => async (req, res) => {
 exports.pueblo = renderView('pueblo');
 
 exports.addPueblo = guardarDatos(puebloModel.addPueblo, '/pueblo/table');
+
+exports.getPueblo = async (req, res) => {
+    try {
+        const pueblo = await puebloModel.getPueblo();
+        res.render('pueblo_table', { pueblo });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener pueblos');
+    }
+};

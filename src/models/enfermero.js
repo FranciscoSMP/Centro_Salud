@@ -13,3 +13,9 @@ exports.addEnfermero= async ({ DPI_Enfermero, Primer_Nombre, Segundo_Nombre, Ter
     const query = `INSERT INTO Enfermero (DPI_Enfermero, Primer_Nombre, Segundo_Nombre, Tercer_Nombre, Primer_Apellido, Segundo_Apellido, Id_Municipio) VALUES ('${DPI_Enfermero}', '${Primer_Nombre}', '${Segundo_Nombre}', '${Tercer_Nombre}', '${Primer_Apellido}', '${Segundo_Apellido}', ${Id_Municipio})`;
     await guardarEnBaseDatos(query);
 };
+
+exports.getEnfermero = async () => {
+    const conSQL = await pool.poolPromise;
+    const result = await conSQL.request().query('SELECT * FROM Enfermero');
+    return result.recordset;
+};

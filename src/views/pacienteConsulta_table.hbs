@@ -1,0 +1,19 @@
+<h2>Lista de Relaciones Paciente Consulta</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>DPI Paciente</th>
+            <th>ID Consulta</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each pacienteConsulta}}
+        <tr>
+            <td>{{this.Paciente_Consulta}}</td> <!-- Asegúrate de que los campos coincidan con la base de datos -->
+            <td>{{this.DPI_Paciente}}</td>
+            <td>{{this.Id_Consulta}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

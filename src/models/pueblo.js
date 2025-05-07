@@ -13,3 +13,9 @@ exports.addPueblo= async ({ Nombre_Pueblo }) => {
     const query = `INSERT INTO Pueblo (Nombre_Pueblo) VALUES ('${Nombre_Pueblo}')`;
     await guardarEnBaseDatos(query);
 };
+
+exports.getPueblo = async () => {
+    const conSQL = await pool.poolPromise;
+    const result = await conSQL.request().query('SELECT * FROM Pueblo');
+    return result.recordset;
+};

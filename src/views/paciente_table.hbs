@@ -1,0 +1,49 @@
+<h2>Lista de Pacientes</h2>
+<table>
+    <thead>
+        <tr>
+            <th>DPI</th>
+            <th>Primer Nombre</th>
+            <th>Segundo Nombre</th>
+            <th>Tercer Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Telefono</th>
+            <th>IGGS</th>
+            <th>Genero</th>
+            <th>ID Escolaridad</th>
+            <th>ID Comunidad Linguistica</th>
+            <th>ID Profesion</th>
+            <th>ID Disapacidad</th>
+            <th>ID Control</th>
+            <th>ID Pueblo</th>
+            <th>ID Municipio</th>
+            <th>ID Departamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each pacientes}}
+        <tr>
+            <td>{{this.DPI}}</td>
+            <td>{{this.Primer_nombre}}</td>
+            <td>{{this.Segundo_nombre}}</td>
+            <td>{{this.Tercer_nombre}}</td>
+            <td>{{this.Primer_apellido}}</td>
+            <td>{{this.Segundo_apellido}}</td>
+            <td>{{this.Fecha_nacimiento}}</td>
+            <td>{{this.Telefono}}</td>
+            <td>{{this.IGSS}}</td>
+            <td>{{this.Genero}}</td>
+            <td>{{this.Id_Escolaridad}}</td>
+            <td>{{this.Id_Comunidad_Linguistica}}</td>
+            <td>{{this.Id_Profesion}}</td>
+            <td>{{this.Id_Disapacidad}}</td>
+            <td>{{this.Id_Control}}</td>
+            <td>{{this.Id_Pueblo}}</td>
+            <td>{{this.Id_Municipio}}</td>
+            <td>{{this.Id_Departamento}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

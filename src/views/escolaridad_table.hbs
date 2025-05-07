@@ -1,0 +1,17 @@
+<h2>Lista de Escolaridades</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nivel de Escolaridad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each escolaridad}}
+        <tr>
+            <td>{{this.Id_Escolaridad}}</td> <!-- Asegúrate de que los campos coincidan con la base de datos -->
+            <td>{{this.Nivel_Escolaridad}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

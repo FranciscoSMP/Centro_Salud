@@ -1,0 +1,9 @@
+<h2>Actualizar Comunidad Lingüística</h2>
+<form action="/comunidad_linguistica/actualizar/comunidad_linguistica" method="POST">
+    <input type="hidden" name="Id_Comunidad_Linguistica" value="{{comunidad.Id_Comunidad_Linguistica}}" />
+    <div class="form-group">
+        <label for="Nombre_Comunidad_Linguistica">Nombre de la Comunidad</label>
+        <input type="text" name="Nombre_Comunidad_Linguistica" id="Nombre_Comunidad_Linguistica" value="{{comunidad.Nombre_Comunidad_Linguistica}}" required>
+    </div>
+    <button type="submit">Actualizar</button>
+</form>

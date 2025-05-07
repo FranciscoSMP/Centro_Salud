@@ -1,0 +1,17 @@
+<h2>Lista de Pueblos</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Pueblo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each pueblo}}
+        <tr>
+            <td>{{this.Id_Pueblo}}</td> <!-- Asegúrate de que los campos coincidan con la base de datos -->
+            <td>{{this.Nombre_Pueblo}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

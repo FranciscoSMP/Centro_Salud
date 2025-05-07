@@ -1,74 +1,74 @@
 {{#ifCond user.Id_Rol '==' 1}}
-{{!-- <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="/dashboard">Centro de Salud</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"></li>
-                    <a class="nav-link active" aria-current="page" href="/paciente/table">Paciente</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/municipio/table">Municipio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/departamento/table">Departamento</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/pueblo/table">Pueblo</a>
-                </li>
-                <li class="nav-item"></li>
-                    <a class="nav-link active" aria-current="page" href="/discapacidad/table">Discapacidad</a>
-                </li>
-                <li class="nav-item"></li>
-                    <a class="nav-link active" aria-current="page" href="/escolaridad/table">Escolaridad</a>
-                </li>
-                <li class="nav-item"></li>
-                    <a class="nav-link active" aria-current="page" href="/consulta/table">Consulta</a>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/control/table">Control</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/profesion/table">Profesion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/comunidad_linguistica/table">Comunidad_Linguistica</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/enfermero/table">Enfermero</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/paciente_consulta/table">Paciente_Consulta</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Cerrar Sesión</a>
-                </li>
-            </ul>
+<div class="collapse" id="navbarToggleExternalContent" data-bs-theme="light">
+    <div class="bg-light p-4">
+        <a class="text-body-emphasis h4 no-underline" href="/dashboard">
+            <h5>
+                <center>Centro de Salud</center>
+            </h5>
+        </a>
+        <div class="d-flex justify-content-around mt-4">
+            <div>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Añadir Datos
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/departamento/add">Departamento</a></li>
+                    <li><a class="dropdown-item" href="/municipio/add">Municipio</a></li>
+                    <li><a class="dropdown-item" href="/pueblo/add">Pueblo</a></li>
+                    <li><a class="dropdown-item" href="/control/add">Control</a></li>
+                    <li><a class="dropdown-item" href="/discapacidad/add">Discapacidad</a></li>
+                    <li><a class="dropdown-item" href="/profesion/add">Profesión</a></li>
+                    <li><a class="dropdown-item" href="/comunidad_linguistica/add">Comunidad Lingüistica</a></li>
+                    <li><a class="dropdown-item" href="/escolaridad/add">Escolaridad</a></li>
+                    <li><a class="dropdown-item" href="/paciente/add">Paciente</a></li>
+                    <li><a class="dropdown-item" href="/consulta/add">Consulta</a></li>
+                    <li><a class="dropdown-item" href="/enfermero/add">Enfermero</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/paciente_consulta/add">Paciente - Consulta</a></li>
+                </ul>
+            </div>
+            <div>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Datos Ingresados
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/departamento/table">Departamento</a></li>
+                    <li><a class="dropdown-item" href="/municipio/table">Municipio</a></li>
+                    <li><a class="dropdown-item" href="/pueblo/table">Pueblo</a></li>
+                    <li><a class="dropdown-item" href="/control/table">Control</a></li>
+                    <li><a class="dropdown-item" href="/discapacidad/table">Discapacidad</a></li>
+                    <li><a class="dropdown-item" href="/profesion/table">Profesión</a></li>
+                    <li><a class="dropdown-item" href="/comunidad_linguistica/table">Comunidad Lingüistica</a></li>
+                    <li><a class="dropdown-item" href="/escolaridad/table">Escolaridad</a></li>
+                    <li><a class="dropdown-item" href="/paciente/table">Paciente</a></li>
+                    <li><a class="dropdown-item" href="/consulta/table">Consulta</a></li>
+                    <li><a class="dropdown-item" href="/enfermero/table">Enfermero</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/paciente_consulta/table">Paciente - Consulta</a></li>
+                </ul>
+            </div>
         </div>
-</nav> --}}
-<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/dashboard">Centro de Salud</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Insertar Datos
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/paciente/table">Paciente</a></li>
-            <li><a class="dropdown-item" href="/municipio/table">Municipio</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
     </div>
-  </div>
+</div>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <div class="d-flex">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="d-flex ms-auto">
+            <a href="/dashboard" class="btn btn-dark me-2">Inicio</a>
+            <a href="/users/logout" class="btn btn-danger">Cerrar Sesión</a>
+        </div>
+    </div>
 </nav>
 {{/ifCond}}

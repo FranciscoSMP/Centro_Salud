@@ -1,0 +1,27 @@
+<h2>Lista de Enfermeros</h2>
+<table>
+    <thead>
+        <tr>
+            <th>DPI Enfermero</th>
+            <th>Primer Nombre</th>
+            <th>Segundo Nombre</th>
+            <th>Tercer Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>ID Municipio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each enfermeros}}
+        <tr>
+            <td>{{this.DPI_Enfermero}}</td>
+            <td>{{this.Primer_Nombre}}</td>
+            <td>{{this.Segundo_Nombre}}</td>
+            <td>{{this.Tercer_Nombre}}</td>
+            <td>{{this.Primer_Apellido}}</td>
+            <td>{{this.Segundo_Apellido}}</td>
+            <td>{{this.Id_Municipio}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

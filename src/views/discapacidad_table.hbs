@@ -1,0 +1,17 @@
+<h2>Lista de Discapacidades</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre de la Discapacidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each discapacidad}}
+        <tr>
+            <td>{{this.Id_Discapacidad}}</td> <!-- Asegúrate de que los campos coincidan con la base de datos -->
+            <td>{{this.Tipo_Discapacidad}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

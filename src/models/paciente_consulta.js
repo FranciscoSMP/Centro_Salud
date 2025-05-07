@@ -14,3 +14,9 @@ exports.addPacienteConsulta = async ({ DPI_Paciente, Id_Consulta }) => {
     VALUES ('${DPI_Paciente}', ${Id_Consulta})`;
     await guardarEnBaseDatos(query);
 };
+
+exports.getPacienteConsulta = async () => {
+    const conSQL = await pool.poolPromise;
+    const result = await conSQL.request().query('SELECT * FROM Paciente_Consulta');
+    return result.recordset;
+};

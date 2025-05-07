@@ -1,0 +1,17 @@
+<h2>Lista de Departamentos</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Departamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each departamentos}}
+        <tr>
+            <td>{{this.Id_Departamento}}</td> <!-- Asegúrate de que los campos coincidan con la base de datos -->
+            <td>{{this.Nombre_Departamento}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

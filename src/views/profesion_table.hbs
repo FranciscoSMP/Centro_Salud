@@ -1,0 +1,17 @@
+<h2>Lista de Presiones</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre de la Profesion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each profesion}}
+        <tr>
+            <td>{{this.Id_Profesion}}</td> <!-- Asegúrate de que los campos coincidan con la base de datos -->
+            <td>{{this.Profesion_Oficio}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

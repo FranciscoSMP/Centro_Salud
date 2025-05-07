@@ -1,0 +1,19 @@
+<h2>Lista de Consultas</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID Consulta</th>
+            <th>Fecha Consulta</th>
+            <th>DPI Paciente</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each consultas}}
+        <tr>
+            <td>{{this.Id_Consulta}}</td>
+            <td>{{this.Fecha_Consulta}}</td>
+            <td>{{this.DPI_Paciente}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
