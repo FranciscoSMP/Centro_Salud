@@ -1,0 +1,9 @@
+<h2>Actualizar Departamento</h2>
+<form action="/departamento/actualizar/departamento" method="POST">
+    <input type="hidden" name="Id_Departamento" value="{{departamento.Id_Departamento}}" />
+    <div class="form-group">
+        <label for="Nombre_Departamento">Nombre del Departamento</label>
+        <input type="text" name="Nombre_Departamento" id="Nombre_Departamento" value="{{departamento.Nombre_Departamento}}" required>
+    </div>
+    <button type="submit">Actualizar</button>
+</form>

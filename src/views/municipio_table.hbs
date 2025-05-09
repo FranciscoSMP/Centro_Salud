@@ -15,7 +15,11 @@
             <td>{{this.Nombre_Municipio}}</td>
             <td>{{this.Id_Departamento}}</td>
             <td>
-                <a href="/municipio/editar/{{this.Id_Municipio}}">Editar</a>
+                <form action="/municipio/eliminar/{{this.Id_Municipio}}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Está seguro de que desea eliminar este Municipio?');">Eliminar</button>
+                </form>
             </td>
         </tr>
         {{/each}}

@@ -4,6 +4,7 @@
         <tr>
             <th>ID</th>
             <th>Nivel de Escolaridad</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +12,14 @@
         <tr>
             <td>{{this.Id_Escolaridad}}</td> <!-- Asegúrate de que los campos coincidan con la base de datos -->
             <td>{{this.Nivel_Escolaridad}}</td>
+            <td>
+                <a href="/escolaridad/editar/{{this.Id_Escolaridad}}">Editar</a>
+                <form action="/escolaridad/eliminar/{{this.Id_Escolaridad}}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Está seguro de que desea eliminar la escolaridad?');">Eliminar</button>
+                </form>
+            </td>
         </tr>
         {{/each}}
     </tbody>

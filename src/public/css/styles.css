@@ -191,7 +191,7 @@ h1, h2 {
 }
 
 /* Centrar el formulario y ajustar su ancho */
-.form-departamento {
+.form-General {
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;

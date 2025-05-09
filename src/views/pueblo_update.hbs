@@ -1,0 +1,9 @@
+<h2>Actualizar Pueblos</h2>
+<form action="/pueblo/actualizar/pueblo" method="POST">
+    <input type="hidden" name="Id_Pueblo" value="{{pueblo.Id_Pueblo}}" />
+    <div class="form-group">
+        <label for="Nombre_Pueblo">Nombre del Pueblo</label>
+        <input type="text" name="Nombre_Pueblo" id="Nombre_Pueblo" value="{{pueblo.Nombre_Pueblo}}" required>
+    </div>
+    <button type="submit">Actualizar</button>
+</form>

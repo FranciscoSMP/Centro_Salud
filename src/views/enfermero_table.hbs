@@ -9,6 +9,7 @@
             <th>Primer Apellido</th>
             <th>Segundo Apellido</th>
             <th>ID Municipio</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +22,16 @@
             <td>{{this.Primer_Apellido}}</td>
             <td>{{this.Segundo_Apellido}}</td>
             <td>{{this.Id_Municipio}}</td>
+            <td>
+                <a href="/enfermero/editar/{{this.DPI_Enfermero}}">Editar</a>
+                <form action="/enfermero/eliminar/{{this.DPI_Enfermero}}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Está seguro de que desea eliminar datos del enfermero?');">Eliminar</button>
+                </form>
+            </td>
         </tr>
+        
         {{/each}}
     </tbody>
 </table>

@@ -1,0 +1,9 @@
+<h2>Actualizar Profesion</h2>
+<form action="/profesion/actualizar/profesion" method="POST">
+    <input type="hidden" name="Id_Profesion" value="{{profesion.Id_Profesion}}" />
+    <div class="form-group">
+        <label for="Profesion_Oficio">Tipo de profesion</label>
+        <input type="text" name="Profesion_Oficio" id="Profesion_Oficio" value="{{profesion.Profesion_Oficio}}" required>
+    </div>
+    <button type="submit">Actualizar</button>
+</form>

@@ -4,6 +4,6 @@ module.exports = {
             return next();
         }
         req.flash('error_msg', 'Por favor inicie sesión para acceder a esta página');
-        res.redirect('/users/login');
+        res.redirect('/login');
     }
 };

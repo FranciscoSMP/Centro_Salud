@@ -1,7 +1,9 @@
 <div class="container login-container mt-5">
     <h2 class="text-center login-title">Iniciar Sesión</h2>
-    <form action="/users/login" method="POST">
-        {{#if error}}
+    <form action="/login" method="POST">
+        {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+        {{else if error}}
             <div class="alert alert-danger">{{error}}</div>
         {{/if}}
         <div class="form-group">
@@ -18,4 +20,5 @@
             <button  type="submit" class="btn btn-primary btn-block login-btn">Ingresar</button>
         </center>
     </form>
+    
 </div>

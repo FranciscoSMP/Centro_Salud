@@ -14,6 +14,11 @@
             <td>{{this.Nombre_Comunidad_Linguistica}}</td>
             <td>
                 <a href="/comunidad_linguistica/editar/{{this.Id_Comunidad_Linguistica}}">Editar</a>
+                <form action="/comunidad_linguistica/eliminar/{{this.Id_Comunidad_Linguistica}}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Está seguro de que desea eliminar esta comunidad lingüística?');">Eliminar</button>
+                </form>
             </td>
         </tr>
         {{/each}}

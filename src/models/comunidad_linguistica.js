@@ -33,3 +33,8 @@ exports.getComunidadById = async (id) => {
     const result = await conSQL.request().query(`SELECT * FROM Comunidad_Linguistica WHERE Id_Comunidad_Linguistica = ${id}`);
     return result.recordset[0];
 };
+
+exports.deleteComunidad_Linguistica = async (id) => {
+    const query = `DELETE FROM Comunidad_Linguistica WHERE Id_Comunidad_Linguistica = ${id}`;
+    await guardarEnBaseDatos(query);
+};

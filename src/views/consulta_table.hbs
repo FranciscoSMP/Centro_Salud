@@ -5,6 +5,7 @@
             <th>ID Consulta</th>
             <th>Fecha Consulta</th>
             <th>DPI Paciente</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +14,14 @@
             <td>{{this.Id_Consulta}}</td>
             <td>{{this.Fecha_Consulta}}</td>
             <td>{{this.DPI_Paciente}}</td>
+            <td>
+                <a href="/consulta/editar/{{this.Id_Consulta}}">Editar</a>
+                <form action="/consulta/eliminar/{{this.Id_Consulta}}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Está seguro de que desea eliminar esta consulta?');">Eliminar</button>
+                </form>
+            </td>
         </tr>
         {{/each}}
     </tbody>

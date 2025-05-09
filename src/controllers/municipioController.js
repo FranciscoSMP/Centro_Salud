@@ -34,7 +34,7 @@ exports.updateMunicipio = async (req, res) => {
         res.redirect('/municipio/table');
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error al actualizar la comunidad lingüística');
+        res.status(500).send('Error al actualizar el municipio');
     }
 };
 
@@ -44,6 +44,16 @@ exports.getMunicipioById = async (req, res) => {
         res.render('municipio_update', { municipio });
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error al obtener la comunidad lingüística');
+        res.status(500).send('Error al obtener el municipio');
+    }
+};
+
+exports.deleteMunicipio = async (req, res) => {
+    try {
+        await municipioModel.deleteMunicipio(req.params.id);
+        res.redirect('/municipio/table');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al eliminar el municipio');
     }
 };

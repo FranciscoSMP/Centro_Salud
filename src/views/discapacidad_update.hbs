@@ -1,0 +1,9 @@
+<h2>Actualizar Discapacidad</h2>
+<form action="/discapacidad/actualizar/discapacidad" method="POST">
+    <input type="hidden" name="Id_Discapacidad" value="{{discapacidad.Id_Discapacidad}}" />
+    <div class="form-group">
+        <label for="Tipo_Discapacidad">Tipo de discapacidad</label>
+        <input type="text" name="Tipo_Discapacidad" id="Tipo_Discapacidad" value="{{discapacidad.Tipo_Discapacidad}}" required>
+    </div>
+    <button type="submit">Actualizar</button>
+</form>

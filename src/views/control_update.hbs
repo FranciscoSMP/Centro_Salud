@@ -1,0 +1,9 @@
+<h2>Actualizar Controles</h2>
+<form action="/control/actualizar/control" method="POST">
+    <input type="hidden" name="Id_Control" value="{{control.Id_Control}}" />
+    <div class="form-group">
+        <label for="Tipo_Control">Tipo del Control</label>
+        <input type="text" name="Tipo_Control" id="Tipo_Control" value="{{control.Tipo_Control}}" required>
+    </div>
+    <button type="submit">Actualizar</button>
+</form>

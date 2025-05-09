@@ -1,0 +1,14 @@
+<h2 class="text-center my-4">Añadir Consulta</h2>
+<form action="/consulta/guardar/consulta" method="POST" class="container form-General">
+    <div class="form-group mb-3">
+        <label for="Fecha_Consulta" class="form-label">Fecha de Consulta (YY-MM-DD)</label>
+        <input type="text" name="Fecha_Consulta" id="Fecha_Consulta" class="form-control" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="DPI_Paciente" class="form-label">DPI del paciente</label>
+        <input type="text" name="DPI_Paciente" id="DPI_Paciente" class="form-control" required>
+    </div>
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary">Añadir</button>
+    </div>
+</form>

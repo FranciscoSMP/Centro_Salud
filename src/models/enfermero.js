@@ -19,3 +19,28 @@ exports.getEnfermero = async () => {
     const result = await conSQL.request().query('SELECT * FROM Enfermero');
     return result.recordset;
 };
+
+exports.deleteEnfermero = async (id) => {
+    const query = `DELETE FROM Enfermero WHERE DPI_Enfermero = ${id}`;
+    await guardarEnBaseDatos(query);
+};
+
+
+exports.updateEnfermero = async ({ DPI_Enfermero, Primer_Nombre, Segundo_Nombre, Tercer_Nombre, Primer_Apellido, Segundo_Apellido, Id_Municipio }) => {
+    const query = `
+        UPDATE Enfermero
+        SET Primer_Nombre = '${Primer_Nombre}',
+        Segundo_Nombre = '${Segundo_Nombre}',
+        Tercer_Nombre = '${Tercer_Nombre}',
+        Primer_Apellido = '${Primer_Apellido}',
+        Segundo_Apellido = '${Segundo_Apellido}',
+        Id_Municipio = ${Id_Municipio}
+        WHERE DPI_Enfermero = '${DPI_Enfermero}'`;
+    await guardarEnBaseDatos(query);
+};  
+
+exports.getEnfermeroById = async (id) => {
+    const conSQL = await pool.poolPromise;
+    const result = await conSQL.request().query(`SELECT * FROM Enfermero WHERE DPI_Enfermero = ${id}`);
+    return result.recordset[0];
+};

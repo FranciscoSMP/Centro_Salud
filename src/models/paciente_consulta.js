@@ -20,3 +20,23 @@ exports.getPacienteConsulta = async () => {
     const result = await conSQL.request().query('SELECT * FROM Paciente_Consulta');
     return result.recordset;
 };
+
+exports.updatePacienteConsulta = async ({ Paciente_Consulta, DPI_Paciente, Id_Consulta }) => {
+    const query = `
+        UPDATE Paciente_Consulta
+        SET DPI_Paciente = '${DPI_Paciente}',
+        Id_Consulta = ${Id_Consulta}
+        WHERE Paciente_Consulta = ${Paciente_Consulta}`;
+    await guardarEnBaseDatos(query);
+};  
+
+exports.getPacienteConsultaById = async (id) => {
+    const conSQL = await pool.poolPromise;
+    const result = await conSQL.request().query(`SELECT * FROM Paciente_Consulta WHERE Paciente_Consulta = ${id}`);
+    return result.recordset[0];
+}; 
+ 
+exports.deletePacienteConsulta  = async (id) => {
+    const query = `DELETE FROM Paciente_Consulta WHERE Paciente_Consulta = ${id}`;
+    await guardarEnBaseDatos(query);
+};

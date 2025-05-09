@@ -14,7 +14,7 @@ const guardarDatos = (model, redirect) => async (req, res) => {
     }
 };
 
-exports.comunidad_linguistica = renderView('comunidad_linguistica');
+exports.comunidad_linguistica = renderView('add/comunidad_linguistica');
 
 exports.addComunidad_Linguistica = guardarDatos(comunidad_linguisticaModel.addComunidad_Linguistica, '/comunidad_linguistica/table');
 
@@ -45,5 +45,15 @@ exports.getComunidadById = async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener la comunidad lingüística');
+    }
+};
+
+exports.deleteComunidad_Linguistica = async (req, res) => {
+    try {
+        await comunidad_linguisticaModel.deleteComunidad_Linguistica(req.params.id);
+        res.redirect('/comunidad_linguistica/table');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al eliminar la comunidad lingüística');
     }
 };

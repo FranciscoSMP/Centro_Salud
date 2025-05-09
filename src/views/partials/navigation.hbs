@@ -67,8 +67,64 @@
         </div>
         <div class="d-flex ms-auto">
             <a href="/dashboard" class="btn btn-dark me-2">Inicio</a>
-            <a href="/users/logout" class="btn btn-danger">Cerrar Sesión</a>
+            <a href="/logout" class="btn btn-danger">Cerrar Sesión</a>
+        </div>
+    </div>
+</nav>
+{{else ifCond user.Id_Rol '==' 2}}
+<div class="collapse" id="navbarToggleExternalContent" data-bs-theme="light">
+    <div class="bg-light p-4">
+        <a class="text-body-emphasis h4 no-underline" href="/dashboard">
+            <h5>
+                <center>Centro de Salud</center>
+            </h5>
+        </a>
+        <div class="d-flex justify-content-around mt-4">
+            <div>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Añadir Datos
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/paciente/add">Paciente</a></li>
+                    <li><a class="dropdown-item" href="/consulta/add">Consulta</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/paciente_consulta/add">Paciente - Consulta</a></li>
+                </ul>
+            </div>
+            <div>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Datos Ingresados
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/paciente/table">Paciente</a></li>
+                    <li><a class="dropdown-item" href="/consulta/table">Consulta</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/paciente_consulta/table">Paciente - Consulta</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <div class="d-flex">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="d-flex ms-auto">
+            <a href="/dashboard" class="btn btn-dark me-2">Inicio</a>
+            <a href="/logout" class="btn btn-danger">Cerrar Sesión</a>
         </div>
     </div>
 </nav>
 {{/ifCond}}
+

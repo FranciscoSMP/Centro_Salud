@@ -1,0 +1,12 @@
+<h2>Actualizar Consulta</h2>
+<form action="/consulta/actualizar/consulta" method="POST">
+    <input type="hidden" name="Id_Consulta" value="{{consulta.Id_Consulta}}" />
+    <div class="form-group">
+        <label for="Fecha_Consulta">Fecha de Consulta</label>
+        <input type="date" name="Fecha_Consulta" id="Fecha_Consulta" value="{{consulta.Fecha_Consulta}}" required>
+        <label for="DPI_Paciente">DPI del Paciente</label>
+        <input type="text" name="DPI_Paciente" id="DPI_Paciente" value="{{consulta.DPI_Paciente}}" required>
+    </div>
+    <button type="submit">Actualizar</button>
+</form>
+

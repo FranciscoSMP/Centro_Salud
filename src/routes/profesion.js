@@ -8,4 +8,10 @@ router.get('/table', profesionController.getProfesion);
 
 router.post('/guardar/profesion', profesionController.addProfesion);
 
+router.post('/actualizar/profesion', profesionController.updateProfesion);
+
+router.get('/editar/:id', profesionController.getProfesionById);
+
+router.post('/eliminar/:id', profesionController.deleteProfesion);
+
 module.exports = router;

@@ -1,0 +1,19 @@
+<h2>Actualizar Enfermero</h2>
+<form action="/enfermero/actualizar/enfermero" method="POST">
+    <input type="hidden" name="DPI_Enfermero" value="{{enfermero.DPI_Enfermero}}" />
+    <div class="form-group">
+        <label for="Primer_Nombre">Primer Nombre </label>
+        <input type="text" name="Primer_Nombre" id="Primer_Nombre" value="{{enfermero.Primer_Nombre}}" required>
+        <label for="Segundo_Nombre">Segundo Nombre </label>
+        <input type="text" name="Segundo_Nombre" id="Segundo_Nombre" value="{{enfermero.Segundo_Nombre}}">
+        <label for="Tercer_Nombre">Tercer Nombre </label>
+        <input type="text" name="Tercer_Nombre" id="Tercer_Nombre" value="{{enfermero.Tercer_Nombre}}">
+        <label for="Primer_Apellido">Primer Apellido </label>
+        <input type="text" name="Primer_Apellido" id="Primer_Apellido" value="{{enfermero.Primer_Apellido}}" required>
+        <label for="Segundo_Apellido">Segundo Apellido </label>
+        <input type="text" name="Segundo_Apellido" id="Segundo_Apellido" value="{{enfermero.Segundo_Apellido}}">
+        <label for="Id_Municipio">ID Municipio: </label>
+        <input type="text" name="Id_Municipio" id="Id_Municipio" value="{{enfermero.Id_Municipio}}" required>
+    </div>
+    <button type="submit">Actualizar</button>
+</form>

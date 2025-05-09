@@ -20,6 +20,7 @@
             <th>ID Pueblo</th>
             <th>ID Municipio</th>
             <th>ID Departamento</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -43,6 +44,14 @@
             <td>{{this.Id_Pueblo}}</td>
             <td>{{this.Id_Municipio}}</td>
             <td>{{this.Id_Departamento}}</td>
+            <td>
+                <a href="/paciente/editar/{{this.DPI}}">Editar</a>
+                <form action="/paciente/eliminar/{{this.DPI}}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Está seguro de que desea eliminar este paciente?');">Eliminar</button>
+                </form>
+            </td>
         </tr>
         {{/each}}
     </tbody>

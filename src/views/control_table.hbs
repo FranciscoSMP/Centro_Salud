@@ -4,6 +4,7 @@
         <tr>
             <th>ID</th>
             <th>Nombre del Control</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +12,14 @@
         <tr>
             <td>{{this.Id_Control}}</td> <!-- Asegúrate de que los campos coincidan con la base de datos -->
             <td>{{this.Tipo_Control}}</td>
+            <td>
+                <a href="/control/editar/{{this.Id_Control}}">Editar</a>
+                <form action="/control/eliminar/{{this.Id_Control}}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Está seguro de que desea eliminar esta Control?');">Eliminar</button>
+                </form>
+            </td>
         </tr>
         {{/each}}
     </tbody>

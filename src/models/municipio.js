@@ -34,3 +34,8 @@ exports.getMunicipioById = async (id) => {
     const result = await conSQL.request().query(`SELECT * FROM Municipio WHERE Id_Municipio = ${id}`);
     return result.recordset[0];
 };
+
+exports.deleteMunicipio = async (id) => {
+    const query = `DELETE FROM Municipio WHERE Id_Municipio = ${id}`;
+    await guardarEnBaseDatos(query);
+};

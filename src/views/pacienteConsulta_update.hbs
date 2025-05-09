@@ -1,0 +1,11 @@
+<h2>Actualizar Paciente - Consulta</h2>
+<form action="/paciente_consulta/actualizar/paciente_consulta" method="POST">
+    <input type="hidden" name="Paciente_Consulta" value="{{pacienteConsulta.Paciente_Consulta}}" />
+    <div class="form-group">
+        <label for="DPI_Paciente">DPI del paciente</label>
+        <input type="text" name="DPI_Paciente" id="DPI_Paciente" value="{{pacienteConsulta.DPI_Paciente}}" required>
+        <label for="Id_Consulta">ID de la consulta</label>
+        <input type="text" name="Id_Consulta" id="Id_Consulta" value="{{pacienteConsulta.Id_Consulta}}" required>
+    </div>
+    <button type="submit">Actualizar</button>
+</form>
