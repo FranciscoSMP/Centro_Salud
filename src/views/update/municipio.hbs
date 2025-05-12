@@ -1,0 +1,33 @@
+{{#ifCond user.Id_Rol '==' 1}}
+<h2 class="text-center my-4">Actualizar Municipio</h2>
+<form action="/municipio/actualizar" method="POST" class="container form-General">
+    <input type="hidden" name="Id_Municipio" value="{{municipio.Id_Municipio}}" />
+    <div class="form-group mb-3">
+        <label for="Nombre_Municipio" class="form-label">Nombre del Municipio</label>
+        <input type="text" name="Nombre_Municipio" id="Nombre_Municipio" class="form-control"
+            value="{{municipio.Nombre_Municipio}}" required>
+        <p></p>
+        <label for="Id_Departamento" class="form-label">Departamento</label>
+        <select name="Id_Departamento" id="Id_Departamento" class="form-control" required>
+            {{#each departamentos}}
+            <option value="{{this.Id_Departamento}}" {{#ifCond this.Id_Departamento '==' ../municipio.Id_Departamento}}
+                selected {{/ifCond}}>
+                {{this.Nombre_Departamento}}
+            </option>
+            {{/each}}
+        </select>
+        <p></p>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </div>
+    </div>
+</form>
+{{else ifCond user.Id_Rol '==' 2}}
+<h2 class="text-center my-4">Acceso Denegado</h2>
+<div class="container acceso-denegado">
+    <p class="text-center">No tiene permisos para acceder a esta página.</p>
+    <div class="text-center mt-4">
+        <a href="/dashboard" class="btn btn-danger">Volver al Inicio</a>
+    </div>
+</div>
+{{/ifCond}}
