@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const profesionController = require('../controllers/profesionController');
+const { ensureAuthenticated } = require('../lib/auth');
 
-router.get('/add', profesionController.profesion);
+router.get('/add', ensureAuthenticated, profesionController.profesion);
 
-router.get('/table', profesionController.getProfesion);
+router.get('/table', ensureAuthenticated, profesionController.getProfesion);
 
-router.post('/guardar/profesion', profesionController.addProfesion);
+router.post('/guardar', ensureAuthenticated, profesionController.addProfesion);
 
-router.post('/actualizar/profesion', profesionController.updateProfesion);
+router.post('/actualizar', ensureAuthenticated, profesionController.updateProfesion);
 
-router.get('/editar/:id', profesionController.getProfesionById);
+router.get('/editar/:id', ensureAuthenticated, profesionController.getProfesionById);
 
-router.post('/eliminar/:id', profesionController.deleteProfesion);
+router.post('/eliminar/:id', ensureAuthenticated, profesionController.deleteProfesion);
 
 module.exports = router;

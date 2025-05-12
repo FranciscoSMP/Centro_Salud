@@ -1,12 +1,12 @@
 const pool = require('../keys');
 
-const ejecutarSQLServer = async (query) => {
-    const conSQL = await pool.poolPromise;
-    await conSQL.request().query(query);
+const guardarEnBaseDatos = async (querySQLServer) => {
+    return ejecutarSQLServer(querySQLServer);
 };
 
-const guardarEnBaseDatos = async (querySQLServer) => {
-    ejecutarSQLServer(querySQLServer)
+const ejecutarSQLServer = async (query) => {
+    const conSQL = await pool.poolPromise;
+    return conSQL.request().query(query);
 };
 
 exports.addMunicipio= async ({ Nombre_Municipio, Id_Departamento }) => {
@@ -39,3 +39,14 @@ exports.deleteMunicipio = async (id) => {
     const query = `DELETE FROM Municipio WHERE Id_Municipio = ${id}`;
     await guardarEnBaseDatos(query);
 };
+
+exports.getMunicipioWithDepartamento = async () => {
+    const conSQL = await pool.poolPromise;
+    const result = await conSQL.request().query(`
+        SELECT Municipio.Id_Municipio, Municipio.Nombre_Municipio, Departamento.Nombre_Departamento
+        FROM Municipio
+        JOIN Departamento ON Municipio.Id_Departamento = Departamento.Id_Departamento
+    `);
+    return result.recordset;
+};
+

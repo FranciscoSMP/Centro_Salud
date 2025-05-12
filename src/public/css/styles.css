@@ -116,6 +116,16 @@ h1, h2 {
     box-shadow: none;
 }
 
+select.form-control option {
+    background-color: white;
+    color: #333;
+}
+
+select.form-control:focus option {
+    background-color:white;
+    color: black;
+}
+
 .login-btn {
     font-size: 1.2rem;
     font-weight: 600;
@@ -130,21 +140,27 @@ h1, h2 {
     color: #fff;
 }
 
-/* Ajustes adicionales */
 .alert-danger {
     font-size: 0.9rem;
     color: white;
     background-color: #dc3545;
-    border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 10px;
     text-align: center;
 }
 
-/* Estilos para la barra de navegación personalizada */
+.alert-success {
+    font-size: 0.9rem;
+    color: rgb(255, 255, 255);
+    background-color: #32bd2d;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
 .navbar {
-    background-color: #e3f2fd; /* Color de fondo personalizado */
-    border-bottom: 1px solid #d1d1d1; /* Opcional: agregar una línea inferior para separación */
+    background-color: #e3f2fd;
+    border-bottom: 1px solid #d1d1d1;
 }
 
 .navbar-brand {
@@ -209,7 +225,6 @@ h2 {
 
 /* Estilos personalizados para el botón */
 button[type="submit"] {
-    background-color: #007bff;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -218,19 +233,101 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-/* Efecto hover en el botón */
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-/* Ajuste de padding en los campos de texto */
-.form-control {
-    padding: 10px;
-    font-size: 1rem;
-}
-
 /* Estilos para las etiquetas */
 .form-label {
     font-weight: bold;
     color: #333;
+}
+
+/* Estilo para el mensaje de acceso denegado */
+.acceso-denegado {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #f5c6cb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.acceso-denegado p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #721c24;
+}
+
+/* Estilos para la tabla de departamentos */
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Botones de acción */
+.btn-warning {
+    background-color: #ffb121;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-warning:hover, .btn-danger:hover {
+    opacity: 0.85;
+}
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .table thead th, .table tbody td {
+        padding: 0.75rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+.fade-out {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.fade-out.hidden {
+    opacity: 0;
+}
+
+.alert-overlay {
+    position: fixed;
+}
+
+.alert-center {
+    top: 10px;
+    left: 102%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 125%;
 }

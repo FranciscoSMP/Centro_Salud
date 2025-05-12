@@ -1,12 +1,15 @@
 const escolaridadModel = require('../models/escolaridad');
 
 const renderView = (view) => (req, res) => {
-    res.render(view);
+    res.render(view, {
+        title: 'Añadir Escolaridad'
+    });
 };
 
 const guardarDatos = (model, redirect) => async (req, res) => {
     try {
         await model(req.body); 
+        req.flash('success_msg', 'Datos Guardados Correctamente');
         res.redirect(redirect);
     } catch (error) {
         console.error(error);
@@ -21,7 +24,10 @@ exports.addEscolaridad = guardarDatos(escolaridadModel.addEscolaridad, '/escolar
 exports.getEscolaridad = async (req, res) => {
     try {
         const escolaridad = await escolaridadModel.getEscolaridad();
-        res.render('escolaridad_table', { escolaridad });
+        res.render('tables/escolaridad', { 
+            title: 'Escolaridad',
+            escolaridad 
+        });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener Escolaridades');
@@ -31,6 +37,7 @@ exports.getEscolaridad = async (req, res) => {
 exports.updateEscolaridad = async (req, res) => {
     try {
         await escolaridadModel.updateEscolaridad(req.body);
+        req.flash('success_msg', 'Datos Actualizados Correctamente');
         res.redirect('/escolaridad/table');
     } catch (error) {
         console.error(error);
@@ -41,7 +48,10 @@ exports.updateEscolaridad = async (req, res) => {
 exports.getEscolaridadById = async (req, res) => {
     try {
         const escolaridad = await escolaridadModel.getEscolaridadById(req.params.id);
-        res.render('escolaridad_update', { escolaridad });
+        res.render('update/escolaridad', { 
+            title: 'Actualizar Escolaridad',
+            escolaridad 
+        });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener la escolaridad');
@@ -51,6 +61,7 @@ exports.getEscolaridadById = async (req, res) => {
 exports.deleteEscolaridad = async (req, res) => {
     try {
         await escolaridadModel.deleteEscolaridad(req.params.id);
+        req.flash('success_msg', 'Datos Eliminados Correctamente');
         res.redirect('/escolaridad/table');
     } catch (error) {
         console.error(error);

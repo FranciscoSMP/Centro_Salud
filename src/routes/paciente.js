@@ -6,9 +6,9 @@ router.get('/add', pacienteController.paciente);
 
 router.get('/table', pacienteController.getPaciente);
 
-router.post('/guardar/paciente', pacienteController.addPaciente);
+router.post('/guardar', pacienteController.addPaciente);
 
-router.post('/actualizar/paciente', pacienteController.updatePaciente);
+router.post('/actualizar', pacienteController.updatePaciente);
 
 router.get('/editar/:id', pacienteController.getPacienteById);
 

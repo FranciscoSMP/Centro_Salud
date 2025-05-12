@@ -1,11 +1,23 @@
-    <h2 class="text-center my-4">Añadir Pueblo</h2>
-    <form action="/pueblo/guardar/pueblo" method="POST" class="container form-General">
-        <div class="form-group mb-3">
-            <label for="Nombre_Pueblo" class="form-label">Nombre del Pueblo</label>
-            <input type="text" name="Nombre_Pueblo" id="Nombre_Pueblo" class="form-control" required>
-        </div>
-        <div class="text-center">
+{{#ifCond user.Id_Rol '==' 1}}
+<h2 class="text-center my-4">Añadir Pueblo</h2>
+<form action="/pueblo/guardar" method="POST" class="container form-General">
+    <div class="form-group mb-3">
+        <p>
+            <font color="red">*</font> Son campos obligatorios
+        </p>
+        <label for="Nombre_Pueblo" class="form-label">Nombre del Pueblo <font color="red">*</font></label>
+        <input type="text" name="Nombre_Pueblo" id="Nombre_Pueblo" class="form-control" required>
+    </div>
+    <div class="text-center">
         <button type="submit" class="btn btn-primary">Añadir</button>
-        </div>
-    </form>
-
+    </div>
+</form>
+{{else ifCond user.Id_Rol '==' 2}}
+<h2 class="text-center my-4">Acceso Denegado</h2>
+<div class="container acceso-denegado">
+    <p class="text-center">No tiene permisos para acceder a esta página.</p>
+    <div class="text-center mt-4">
+        <a href="/dashboard" class="btn btn-danger">Volver al Inicio</a>
+    </div>
+</div>
+{{/ifCond}}

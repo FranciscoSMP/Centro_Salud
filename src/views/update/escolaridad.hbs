@@ -1,3 +1,4 @@
+{{#ifCond user.Id_Rol '==' 1}}
 <h2 class="text-center my-4">Actualizar Escolaridad</h2>
 <form action="/escolaridad/actualizar" method="POST" class="container form-General">
     <input type="hidden" name="Id_Escolaridad" value="{{escolaridad.Id_Escolaridad}}" />
@@ -9,3 +10,12 @@
     <button type="submit" class="btn btn-primary">Actualizar</button>
     </div>
 </form> 
+{{else ifCond user.Id_Rol '==' 2}}
+<h2 class="text-center my-4">Acceso Denegado</h2>
+<div class="container acceso-denegado">
+    <p class="text-center">No tiene permisos para acceder a esta página.</p>
+    <div class="text-center mt-4">
+        <a href="/dashboard" class="btn btn-danger">Volver al Inicio</a>
+    </div>
+</div>
+{{/ifCond}}

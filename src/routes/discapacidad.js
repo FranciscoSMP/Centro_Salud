@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const discapacidadController = require('../controllers/discapacidadController');
+const { ensureAuthenticated } = require('../lib/auth');
 
-router.get('/add', discapacidadController.discapacidad);
+router.get('/add', ensureAuthenticated, discapacidadController.discapacidad);
 
-router.get('/table', discapacidadController.getDiscapacidad);
+router.get('/table', ensureAuthenticated, discapacidadController.getDiscapacidad);
 
-router.post('/guardar/discapacidad', discapacidadController.addDiscapacidad);
+router.post('/guardar', ensureAuthenticated, discapacidadController.addDiscapacidad);
 
-router.post('/actualizar/discapacidad', discapacidadController.updateDiscapacidad);
+router.post('/actualizar', ensureAuthenticated, discapacidadController.updateDiscapacidad);
 
-router.get('/editar/:id', discapacidadController.getDiscapacidadById);
+router.get('/editar/:id', ensureAuthenticated, discapacidadController.getDiscapacidadById);
 
-router.post('/eliminar/:id', discapacidadController.deleteDiscapacidad);
+router.post('/eliminar/:id', ensureAuthenticated, discapacidadController.deleteDiscapacidad);
 
 module.exports = router;

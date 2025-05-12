@@ -1,9 +1,13 @@
 {{#if success_msg}}
-            <div class="alert alert-danger">{{success_msg}}</div>
+<div id="success-alert" class="alert-overlay alert-center fade-out">
+    <div class="col-md-2">
+        <div class="alert alert-danger text-center">{{success_msg}}</div>
+    </div>
+</div>
 {{/if}}
 <div class="container mt">
     <h1 class="text-center index-title">Bienvenido</h1>
-    <h2 class="text-center index-subtitle">Sistema Centro Salud</h2>
+    <h2 class="text-center index-subtitle">Sistema Centro de Salud</h2>
     <div class="row justify-content-center mt-4">
         <div class="col-md-4">
             <div class="text-center">

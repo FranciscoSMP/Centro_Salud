@@ -1,12 +1,11 @@
 const pacienteConsultaModel = require('../models/paciente_consulta');
-
-const renderView = (view) => (req, res) => {
-    res.render(view);
-};
+const pacienteModel = require('../models/paciente');
+const consultaModel = require('../models/consulta');
 
 const guardarDatos = (model, redirect) => async (req, res) => {
     try {
         await model(req.body); 
+        req.flash('success_msg', 'Datos Guardados Correctamente');
         res.redirect(redirect);
     } catch (error) {
         console.error(error);
@@ -14,14 +13,30 @@ const guardarDatos = (model, redirect) => async (req, res) => {
     }
 };
 
-exports.pacienteConsulta = renderView('add/pacienteConsulta');
+exports.pacienteConsulta = async (req, res) => {
+    try {
+        const pacientes = await pacienteModel.getPaciente();
+        const consultas = await consultaModel.getConsulta();
+        res.render('add/pacienteConsulta', { 
+            title: 'Añadir Paciente Consulta',
+            pacientes, 
+            consultas
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener datos');
+    }
+};
 
 exports.addPacienteConsulta = guardarDatos(pacienteConsultaModel.addPacienteConsulta, '/paciente_consulta/table');
 
 exports.getPacienteConsulta = async (req, res) => {
     try {
         const pacienteConsulta = await pacienteConsultaModel.getPacienteConsulta();
-        res.render('pacienteConsulta_table', { pacienteConsulta });
+        res.render('tables/pacienteConsulta', { 
+            title: 'Paciente Consulta',
+            pacienteConsulta 
+        });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener las relaciones');
@@ -31,6 +46,7 @@ exports.getPacienteConsulta = async (req, res) => {
 exports.deletePacienteConsulta = async (req, res) => {
     try {
         await pacienteConsultaModel.deletePacienteConsulta(req.params.id);
+        req.flash('success_msg', 'Datos Eliminados Correctamente');
         res.redirect('/paciente_consulta/table');
     } catch (error) {
         console.error(error);
@@ -41,6 +57,7 @@ exports.deletePacienteConsulta = async (req, res) => {
 exports.updatePacienteConsulta = async (req, res) => {
     try {
         await pacienteConsultaModel.updatePacienteConsulta(req.body);
+        req.flash('success_msg', 'Datos Actualizados Correctamente');
         res.redirect('/paciente_consulta/table');
     } catch (error) {
         console.error(error);
@@ -51,7 +68,10 @@ exports.updatePacienteConsulta = async (req, res) => {
 exports.getPacienteConsultaById = async (req, res) => {
     try {
         const pacienteConsulta = await pacienteConsultaModel.getPacienteConsultaById(req.params.id);
-        res.render('pacienteConsulta_update', { pacienteConsulta });
+        res.render('update/pacienteConsulta', { 
+            title: 'Actualizar Paciente Consulta',
+            pacienteConsulta 
+        });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener la comunidad lingüística');

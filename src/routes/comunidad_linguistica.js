@@ -5,14 +5,14 @@ const { ensureAuthenticated } = require('../lib/auth');
 
 router.get('/add', ensureAuthenticated, comunidad_linguisticaController.comunidad_linguistica);
 
-router.get('/table', comunidad_linguisticaController.getComunidad_Linguistica);
+router.get('/table', ensureAuthenticated, comunidad_linguisticaController.getComunidad_Linguistica);
 
-router.post('/guardar/comunidad_linguistica', comunidad_linguisticaController.addComunidad_Linguistica);
+router.post('/guardar', ensureAuthenticated, comunidad_linguisticaController.addComunidad_Linguistica);
 
-router.post('/actualizar/comunidad_linguistica', comunidad_linguisticaController.updateComunidad_Linguistica);
+router.post('/actualizar', ensureAuthenticated, comunidad_linguisticaController.updateComunidad_Linguistica);
 
-router.get('/editar/:id', comunidad_linguisticaController.getComunidadById);
+router.get('/editar/:id', ensureAuthenticated, comunidad_linguisticaController.getComunidadById);
 
-router.post('/eliminar/:id', comunidad_linguisticaController.deleteComunidad_Linguistica);
+router.post('/eliminar/:id', ensureAuthenticated, comunidad_linguisticaController.deleteComunidad_Linguistica);
 
 module.exports = router;

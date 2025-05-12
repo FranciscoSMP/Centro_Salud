@@ -1,5 +1,6 @@
+{{#ifCond user.Id_Rol '==' 1}}
 <h2 class="text-center my-4">Actualizar Comunidad Lingüística</h2>
-<form action="/comunidad_linguistica/actualizar/comunidad_linguistica" method="POST" class="container form-General">
+<form action="/comunidad_linguistica/actualizar" method="POST" class="container form-General">
     <input type="hidden" name="Id_Comunidad_Linguistica" value="{{comunidad.Id_Comunidad_Linguistica}}" />
     <div class="form-group mb-3">
         <label for="Nombre_Comunidad_Linguistica" class="form-label">Nombre de la Comunidad</label>
@@ -9,3 +10,12 @@
     <button type="submit" class="btn btn-primary">Actualizar</button>
     </div>
 </form> 
+{{else ifCond user.Id_Rol '==' 2}}
+<h2 class="text-center my-4">Acceso Denegado</h2>
+<div class="container acceso-denegado">
+    <p class="text-center">No tiene permisos para acceder a esta página.</p>
+    <div class="text-center mt-4">
+        <a href="/dashboard" class="btn btn-danger">Volver al Inicio</a>
+    </div>
+</div>
+{{/ifCond}}

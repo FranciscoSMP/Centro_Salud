@@ -1,12 +1,10 @@
 const enfermeroModel = require('../models/enfermero');
-
-const renderView = (view) => (req, res) => {
-    res.render(view);
-};
+const municipioModel = require('../models/municipio');
 
 const guardarDatos = (model, redirect) => async (req, res) => {
     try {
         await model(req.body); 
+        req.flash('success_msg', 'Datos Guardados Correctamente');
         res.redirect(redirect);
     } catch (error) {
         console.error(error);
@@ -14,14 +12,28 @@ const guardarDatos = (model, redirect) => async (req, res) => {
     }
 };
 
-exports.enfermero = renderView('add/enfermero');
+exports.enfermero = async (req, res) => {
+    try {
+        const municipio = await municipioModel.getMunicipio();
+        res.render('add/enfermero', { 
+            title: 'Añadir Enfermero',
+            municipio
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener datos');
+    }
+};
 
 exports.addEnfermero = guardarDatos(enfermeroModel.addEnfermero, '/enfermero/table');
 
 exports.getEnfermero = async (req, res) => {
     try {
         const enfermeros = await enfermeroModel.getEnfermero();
-        res.render('enfermero_table', { enfermeros });
+        res.render('tables/enfermero', { 
+            title: 'Enfermero',
+            enfermeros 
+        });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener enfermeros');
@@ -31,6 +43,7 @@ exports.getEnfermero = async (req, res) => {
 exports.updateEnfermero = async (req, res) => {
     try {
         await enfermeroModel.updateEnfermero(req.body);
+        req.flash('success_msg', 'Datos Actualizados Correctamente');
         res.redirect('/enfermero/table');
     } catch (error) {
         console.error(error);
@@ -41,7 +54,10 @@ exports.updateEnfermero = async (req, res) => {
 exports.getEnfermeroById = async (req, res) => {
     try {
         const enfermero = await enfermeroModel.getEnfermeroById(req.params.id);
-        res.render('enfermero_update', { enfermero });
+        res.render('update/enfermero', { 
+            title: 'Actualizar Enfermeros',
+            enfermero 
+        });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener a Enfermero');
@@ -51,6 +67,7 @@ exports.getEnfermeroById = async (req, res) => {
 exports.deleteEnfermero = async (req, res) => {
     try {
         await enfermeroModel.deleteEnfermero(req.params.id);
+        req.flash('success_msg', 'Datos Eliminados Correctamente');
         res.redirect('/enfermero/table');
     } catch (error) {
         console.error(error);

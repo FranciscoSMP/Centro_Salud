@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const puebloController = require('../controllers/puebloController');
+const { ensureAuthenticated } = require('../lib/auth');
 
-router.get('/add', puebloController.pueblo);
+router.get('/add', ensureAuthenticated, puebloController.pueblo);
 
-router.get('/table', puebloController.getPueblo);
+router.get('/table', ensureAuthenticated, puebloController.getPueblo);
 
-router.post('/guardar/pueblo', puebloController.addPueblo);
+router.post('/guardar', ensureAuthenticated, puebloController.addPueblo);
 
-router.post('/actualizar/pueblo', puebloController.updatePueblo);
+router.post('/actualizar', ensureAuthenticated, puebloController.updatePueblo);
 
-router.get('/editar/:id', puebloController.getPuebloById);
+router.get('/editar/:id', ensureAuthenticated, puebloController.getPuebloById);
 
-router.post('/eliminar/:id', puebloController.deletePueblo);
+router.post('/eliminar/:id', ensureAuthenticated, puebloController.deletePueblo);
 
 module.exports = router;

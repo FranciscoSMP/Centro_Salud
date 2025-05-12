@@ -2,7 +2,7 @@
     <h2 class="text-center login-title">Iniciar Sesión</h2>
     <form action="/login" method="POST">
         {{#if error_msg}}
-            <div class="alert alert-danger">{{error_msg}}</div>
+            <div id="success-alert" class="alert alert-danger fade-out">{{error_msg}}</div>
         {{else if error}}
             <div class="alert alert-danger">{{error}}</div>
         {{/if}}
@@ -20,5 +20,4 @@
             <button  type="submit" class="btn btn-primary btn-block login-btn">Ingresar</button>
         </center>
     </form>
-    
 </div>

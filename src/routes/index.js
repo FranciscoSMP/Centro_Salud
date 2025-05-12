@@ -4,17 +4,24 @@ const { ensureAuthenticated } = require('../lib/auth');
 const passport = require('passport');
 
 router.get('/', (req, res) => {
-    res.render('index');
+    if (req.isAuthenticated()) {
+        return res.redirect('/dashboard');
+    }
+    res.render('index', {
+        title: 'Centro de Salud'
+    });
 });
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     res.render('dashboard', {
-        user: req.user
+        title: 'Centro de Salud'
     });
 });
 
 router.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login', {
+        title: 'Iniciar Sesión'
+    });
 });
 
 router.post('/login', (req, res, next) => {
