@@ -1,0 +1,43 @@
+{{#if success_msg}}
+<div id="success-alert" class="alert-overlay alert-center fade-out">
+    <div class="col-md-2">
+        <div class="alert alert-success text-center">{{success_msg}}</div>
+    </div>
+</div>
+{{/if}}
+{{#ifCond user.Id_Rol '==' 1}}
+<h2>Lista de Profesiones</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre de la Profesion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each profesion}}
+        <tr>
+            <td>{{this.Id_Profesion}}</td>
+            <td>{{this.Profesion_Oficio}}</td>
+            <td>
+                <a href="/profesion/editar/{{this.Id_Profesion}}">Editar</a>
+                <form action="/profesion/eliminar/{{this.Id_Profesion}}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Está seguro de que desea eliminar datos de profesión?');">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else ifCond user.Id_Rol '==' 2}}
+<h2 class="text-center my-4">Acceso Denegado</h2>
+<div class="container acceso-denegado">
+    <p class="text-center">No tiene permisos para acceder a esta página.</p>
+    <div class="text-center mt-4">
+        <a href="/dashboard" class="btn btn-danger">Volver al Inicio</a>
+    </div>
+</div>
+{{/ifCond}}

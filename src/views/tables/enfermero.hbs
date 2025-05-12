@@ -1,0 +1,54 @@
+{{#if success_msg}}
+<div id="success-alert" class="alert-overlay alert-center fade-out">
+    <div class="col-md-2">
+        <div class="alert alert-success text-center">{{success_msg}}</div>
+    </div>
+</div>
+{{/if}}
+{{#ifCond user.Id_Rol '==' 1}}
+<h2>Lista de Enfermeros</h2>
+<table>
+    <thead>
+        <tr>
+            <th>DPI Enfermero</th>
+            <th>Primer Nombre</th>
+            <th>Segundo Nombre</th>
+            <th>Tercer Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>ID Municipio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each enfermeros}}
+        <tr>
+            <td>{{this.DPI_Enfermero}}</td>
+            <td>{{this.Primer_Nombre}}</td>
+            <td>{{this.Segundo_Nombre}}</td>
+            <td>{{this.Tercer_Nombre}}</td>
+            <td>{{this.Primer_Apellido}}</td>
+            <td>{{this.Segundo_Apellido}}</td>
+            <td>{{this.Id_Municipio}}</td>
+            <td>
+                <a href="/enfermero/editar/{{this.DPI_Enfermero}}">Editar</a>
+                <form action="/enfermero/eliminar/{{this.DPI_Enfermero}}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Está seguro de que desea eliminar datos del enfermero?');">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        
+        {{/each}}
+    </tbody>
+</table>
+{{else ifCond user.Id_Rol '==' 2}}
+<h2 class="text-center my-4">Acceso Denegado</h2>
+<div class="container acceso-denegado">
+    <p class="text-center">No tiene permisos para acceder a esta página.</p>
+    <div class="text-center mt-4">
+        <a href="/dashboard" class="btn btn-danger">Volver al Inicio</a>
+    </div>
+</div>
+{{/ifCond}}

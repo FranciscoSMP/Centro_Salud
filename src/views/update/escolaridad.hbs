@@ -1,0 +1,11 @@
+<h2 class="text-center my-4">Actualizar Escolaridad</h2>
+<form action="/escolaridad/actualizar" method="POST" class="container form-General">
+    <input type="hidden" name="Id_Escolaridad" value="{{escolaridad.Id_Escolaridad}}" />
+    <div class="form-group mb-3">
+        <label for="Nivel_Escolaridad" class="form-label">Nivel de la Escolaridad</label>
+        <input type="text" name="Nivel_Escolaridad" id="Nivel_Escolaridad" class="form-control" value="{{escolaridad.Nivel_Escolaridad}}" required>
+    </div>
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    </div>
+</form> 
