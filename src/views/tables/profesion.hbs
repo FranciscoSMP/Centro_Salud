@@ -6,13 +6,14 @@
 </div>
 {{/if}}
 {{#ifCond user.Id_Rol '==' 1}}
-<h2>Lista de Profesiones</h2>
-<table>
-    <thead>
+<div class="container my-4">
+<h2 class="text-center mb-4">Lista de Profesiones</h2>
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
         <tr>
-            <th>ID</th>
-            <th>Nombre de la Profesion</th>
-            <th>Acciones</th>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre de la Profesion</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -21,10 +22,9 @@
             <td>{{this.Id_Profesion}}</td>
             <td>{{this.Profesion_Oficio}}</td>
             <td>
-                <a href="/profesion/editar/{{this.Id_Profesion}}">Editar</a>
-                <form action="/profesion/eliminar/{{this.Id_Profesion}}" method="POST"
-                    style="display:inline;">
-                    <button type="submit"
+                <a href="/profesion/editar/{{this.Id_Profesion}}" class="btn btn-sm btn-warning me-2">Editar</a>
+                <form action="/profesion/eliminar/{{this.Id_Profesion}}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-sm btn-danger" 
                         onclick="return confirm('¿Está seguro de que desea eliminar datos de profesión?');">Eliminar</button>
                 </form>
             </td>
@@ -32,6 +32,7 @@
         {{/each}}
     </tbody>
 </table>
+</div>
 {{else ifCond user.Id_Rol '==' 2}}
 <h2 class="text-center my-4">Acceso Denegado</h2>
 <div class="container acceso-denegado">

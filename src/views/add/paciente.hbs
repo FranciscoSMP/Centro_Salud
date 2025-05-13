@@ -1,24 +1,31 @@
 <h2 class="text-center my-4">Añadir Paciente</h2>
 <form action="/paciente/guardar" method="POST" class="container">
     <div class="row">
+        <p>
+            <font color="red">*</font> Son campos obligatorios
+        </p>
         <div class="col-md-2 mb-3">
-            <label for="DPI">DPI del Paciente</label>
+            <label for="DPI">DPI del Paciente <font color="red">*</font></label>
             <input type="text" name="DPI" id="DPI" class="form-control" required>
         </div>
-        <div class="col-md-2 mb-3">
-            <label for="Primer_nombre">Primer Nombre</label>
-            <input type="text" name="Primer_nombre" id="Primer_nombre" class="form-control" required>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="Primer_nombre">Primer Nombre <font color="red">*</font></label>
+                    <input type="text" name="Primer_nombre" id="Primer_nombre" class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="Segundo_nombre">Segundo Nombre</label>
+                    <input type="text" name="Segundo_nombre" id="Segundo_nombre" class="form-control">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="Tercer_nombre">Tercer Nombre</label>
+                    <input type="text" name="Tercer_nombre" id="Tercer_nombre" class="form-control">
+                </div>
+            </div>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Segundo_nombre">Segundo Nombre</label>
-            <input type="text" name="Segundo_nombre" id="Segundo_nombre" class="form-control">
-        </div>
-        <div class="col-md-2 mb-3">
-            <label for="Tercer_nombre">Tercer Nombre</label>
-            <input type="text" name="Tercer_nombre" id="Tercer_nombre" class="form-control">
-        </div>
-        <div class="col-md-2 mb-3">
-            <label for="Primer_apellido">Primer Apellido</label>
+            <label for="Primer_apellido">Primer Apellido <font color="red">*</font></label>
             <input type="text" name="Primer_apellido" id="Primer_apellido" class="form-control" required>
         </div>
         <div class="col-md-2 mb-3">
@@ -26,80 +33,106 @@
             <input type="text" name="Segundo_apellido" id="Segundo_apellido" class="form-control">
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Fecha_nacimiento">Fecha de Nacimiento (Y-M-D)</label>
+            <label for="Fecha_nacimiento">Fecha Nacimiento <font color="red">*</font></label>
             <input type="date" name="Fecha_nacimiento" id="Fecha_nacimiento" class="form-control" required>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Telefono">Teléfono</label>
+            <label for="Telefono">Teléfono <font color="red">*</font></label>
             <input type="text" name="Telefono" id="Telefono" class="form-control" required>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="IGSS">IGSS</label>
-            <input type="text" name="IGSS" id="IGSS" class="form-control" required>
+            <label for="IGSS">IGSS <font color="red">*</font></label>
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="IGSS" id="IGSS_S" value="S" required>
+                    <label class="form-check-label" for="IGSS_S">Sí</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="IGSS" id="IGSS_N" value="N" required>
+                    <label class="form-check-label" for="IGSS_N">No</label>
+                </div>
+            </div>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Genero">Género</label>
-            <input type="text" name="Genero" id="Genero" class="form-control" required>
+            <label for="Genero">Género <font color="red">*</font></label>
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Genero" id="Genero_M" value="M" required>
+                    <label class="form-check-label" for="Genero_M">Masculino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Genero" id="Genero_F" value="F" required>
+                    <label class="form-check-label" for="Genero_F">Femenino</label>
+                </div>
+            </div>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Escolaridad">Escolaridad</label>
+            <label for="Id_Escolaridad">Escolaridad <font color="red">*</font></label>
             <select name="Id_Escolaridad" id="Id_Escolaridad" class="form-control" required>
+                <option value="" disabled selected>Seleccione un campo</option>
                 {{#each escolaridades}}
                 <option value="{{this.Id_Escolaridad}}">{{this.Nivel_Escolaridad}}</option>
                 {{/each}}
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Comunidad_Linguistica">Comunidad Linguistica</label>
+            <label for="Id_Comunidad_Linguistica">Comunidad <font color="red">*</font></label>
             <select name="Id_Comunidad_Linguistica" id="Id_Comunidad_Linguistica" class="form-control" required>
+                <option value="" disabled selected>Seleccione un campo</option>
                 {{#each comunidades}}
                 <option value="{{this.Id_Comunidad_Linguistica}}">{{this.Nombre_Comunidad_Linguistica}}</option>
                 {{/each}}
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Profesion">Profesión</label>
+            <label for="Id_Profesion">Profesión <font color="red">*</font></label>
             <select name="Id_Profesion" id="Id_Profesion" class="form-control" required>
+                <option value="" disabled selected>Seleccione un campo</option>
                 {{#each profesiones}}
                 <option value="{{this.Id_Profesion}}">{{this.Profesion_Oficio}}</option>
                 {{/each}}
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Disapacidad">Discapacidad</label>
-            <select type="text" name="Id_Disapacidad" id="Id_Disapacidad" class="form-control" required>
+            <label for="Id_Disapacidad">Discapacidad <font color="red">*</font></label>
+            <select name="Id_Disapacidad" id="Id_Disapacidad" class="form-control" required>
+                <option value="" disabled selected>Seleccione un campo</option>
                 {{#each discapacidades}}
                 <option value="{{this.Id_Discapacidad}}">{{this.Tipo_Discapacidad}}</option>
                 {{/each}}
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Control">Control</label>
+            <label for="Id_Control">Control <font color="red">*</font></label>
             <select name="Id_Control" id="Id_Control" class="form-control" required>
+                <option value="" disabled selected>Seleccione un campo</option>
                 {{#each controles}}
                 <option value="{{this.Id_Control}}">{{this.Tipo_Control}}</option>
                 {{/each}}
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Pueblo">Pueblo</label>
+            <label for="Id_Pueblo">Pueblo <font color="red">*</font></label>
             <select name="Id_Pueblo" id="Id_Pueblo" class="form-control" required>
+                <option value="" disabled selected>Seleccione un campo</option>
                 {{#each pueblos}}
                 <option value="{{this.Id_Pueblo}}">{{this.Nombre_Pueblo}}</option>
                 {{/each}}
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Municipio">Municipio</label>
+            <label for="Id_Municipio">Municipio <font color="red">*</font></label>
             <select name="Id_Municipio" id="Id_Municipio" class="form-control" required>
+                <option value="" disabled selected>Seleccione un campo</option>
                 {{#each municipios}}
                 <option value="{{this.Id_Municipio}}">{{this.Nombre_Municipio}}</option>
                 {{/each}}
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Departamento">Departamento</label>
+            <label for="Id_Departamento">Departamento <font color="red">*</font></label>
             <select name="Id_Departamento" id="Id_Departamento" class="form-control" required>
+                <option value="" disabled selected>Seleccione un campo</option>
                 {{#each departamentos}}
                 <option value="{{this.Id_Departamento}}">{{this.Nombre_Departamento}}</option>
                 {{/each}}

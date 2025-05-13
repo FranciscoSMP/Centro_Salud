@@ -41,17 +41,17 @@ exports.updatePaciente = async ({ DPI, Primer_nombre, Segundo_nombre, Tercer_nom
         Id_Pueblo = ${Id_Pueblo},
         Id_Municipio = ${Id_Municipio},
         Id_Departamento = ${Id_Departamento}
-        WHERE DPI = ${DPI}`;
+        WHERE DPI = '${DPI}'`;
     await guardarEnBaseDatos(query);
 };  
 
 exports.getPacienteById = async (id) => {
     const conSQL = await pool.poolPromise;
-    const result = await conSQL.request().query(`SELECT * FROM Paciente WHERE DPI = ${id}`);
+    const result = await conSQL.request().query(`SELECT * FROM Paciente WHERE DPI = '${id}'`);
     return result.recordset[0];
 };
 
 exports.deletePaciente  = async (id) => {
-    const query = `DELETE FROM Paciente WHERE DPI = ${id}`;
+    const query = `DELETE FROM Paciente WHERE DPI = '${id}'`;
     await guardarEnBaseDatos(query);
 };

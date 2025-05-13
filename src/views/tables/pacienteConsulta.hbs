@@ -5,14 +5,15 @@
     </div>
 </div>
 {{/if}}
-<h2>Lista de Relaciones Paciente Consulta</h2>
-<table>
-    <thead>
+<div class="container my-4">
+<h2 class="text-center mb-4">Lista de Relaciones Paciente Consulta</h2>
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
         <tr>
-            <th>ID</th>
-            <th>DPI Paciente</th>
-            <th>ID Consulta</th>
-            <th>Acciones</th>
+            <th scope="col">ID</th>
+            <th scope="col">DPI Paciente</th>
+            <th scope="col">ID Consulta</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -22,10 +23,9 @@
             <td>{{this.DPI_Paciente}}</td>
             <td>{{this.Id_Consulta}}</td>
             <td>
-                <a href="/paciente_consulta/editar/{{this.Paciente_Consulta}}">Editar</a>
-                <form action="/paciente_consulta/eliminar/{{this.Paciente_Consulta}}" method="POST"
-                    style="display:inline;">
-                    <button type="submit"
+                <a href="/paciente_consulta/editar/{{this.Paciente_Consulta}}" class="btn btn-sm btn-warning me-2">Editar</a>
+                <form action="/paciente_consulta/eliminar/{{this.Paciente_Consulta}}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-sm btn-danger"
                         onclick="return confirm('¿Está seguro de que desea eliminar la relación paciente - consulta?');">Eliminar</button>
                 </form>
             </td>
@@ -33,3 +33,4 @@
         {{/each}}
     </tbody>
 </table>
+</div>

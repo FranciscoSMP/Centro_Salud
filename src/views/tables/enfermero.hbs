@@ -6,18 +6,21 @@
 </div>
 {{/if}}
 {{#ifCond user.Id_Rol '==' 1}}
-<h2>Lista de Enfermeros</h2>
-<table>
-    <thead>
+<div class="container my-4">
+
+<h2 class="text-center mb-4">Lista de Enfermeros </h2>
+
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
         <tr>
-            <th>DPI Enfermero</th>
-            <th>Primer Nombre</th>
-            <th>Segundo Nombre</th>
-            <th>Tercer Nombre</th>
-            <th>Primer Apellido</th>
-            <th>Segundo Apellido</th>
-            <th>ID Municipio</th>
-            <th>Acciones</th>
+            <th scope="col">DPI Enfermero</th>
+            <th scope="col">Primer Nombre</th>
+            <th scope="col">Segundo Nombre</th>
+            <th scope="col">Tercer Nombre</th>
+            <th scope="col">Primer Apellido</th>
+            <th scope="col">Segundo Apellido</th>
+            <th scope="col">ID Municipio</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -31,10 +34,10 @@
             <td>{{this.Segundo_Apellido}}</td>
             <td>{{this.Id_Municipio}}</td>
             <td>
-                <a href="/enfermero/editar/{{this.DPI_Enfermero}}">Editar</a>
-                <form action="/enfermero/eliminar/{{this.DPI_Enfermero}}" method="POST"
-                    style="display:inline;">
-                    <button type="submit"
+                <a href="/enfermero/editar/{{this.DPI_Enfermero}}" class="btn btn-sm btn-warning me-2" >Editar</a>
+                <p></p>
+                <form action="/enfermero/eliminar/{{this.DPI_Enfermero}}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-sm btn-danger"
                         onclick="return confirm('¿Está seguro de que desea eliminar datos del enfermero?');">Eliminar</button>
                 </form>
             </td>
@@ -43,6 +46,7 @@
         {{/each}}
     </tbody>
 </table>
+</div>
 {{else ifCond user.Id_Rol '==' 2}}
 <h2 class="text-center my-4">Acceso Denegado</h2>
 <div class="container acceso-denegado">

@@ -2,12 +2,13 @@
 <h2 class="text-center my-4">Añadir Enfermero</h2>
 <form action="/enfermero/guardar" method="POST" class="container">
     <div class="row">
+        <p><font color="red">*</font> Son campos obligatorios</p>
         <div class="col-md-4 mb-3">
-            <label for="DPI_Enfermero">DPI del Enfermero</label>
+            <label for="DPI_Enfermero">DPI del Enfermero <font color="red">*</font></label>
             <input type="text" name="DPI_Enfermero" id="DPI_Enfermero" class="form-control" required>
         </div>
         <div class="col-md-4 mb-3">
-            <label for="Primer_Nombre">Primer Nombre</label>
+            <label for="Primer_Nombre">Primer Nombre <font color="red">*</font></label>
             <input type="text" name="Primer_Nombre" id="Primer_Nombre" class="form-control" required>
         </div>
         <div class="col-md-4 mb-3">
@@ -15,19 +16,19 @@
             <input type="text" name="Segundo_Nombre" id="Segundo_Nombre" class="form-control">
         </div>
         <div class="col-md-4 mb-3">
-            <label for="Tercer_Nombre">Tercer Nombre Opcional</label>
+            <label for="Tercer_Nombre">Tercer Nombre</label>
             <input type="text" name="Tercer_Nombre" id="Tercer_Nombre" class="form-control">
         </div>
         <div class="col-md-4 mb-3">
-            <label for="Primer_Apellido">Primer Apellido</label>
+            <label for="Primer_Apellido">Primer Apellido <font color="red">*</font></label>
             <input type="text" name="Primer_Apellido" id="Primer_Apellido" class="form-control" required>
         </div>
         <div class="col-md-4 mb-3">
-            <label for="Segundo_Apellido">Segundo Apellido</label>
+            <label for="Segundo_Apellido">Segundo Apellido <font color="red">*</font></label>
             <input type="text" name="Segundo_Apellido" id="Segundo_Apellido" class="form-control">
         </div>
         <div class="col-md-4 mb-3">
-            <label for="Id_Municipio">Ingrese Municipio</label>
+            <label for="Id_Municipio">Municipio <font color="red">*</font></label>
             <select name="Id_Municipio" id="Id_Municipio" class="form-control">
                 <option value="" disabled selected>Seleccione un Campo</option>
                 {{#each municipio}}

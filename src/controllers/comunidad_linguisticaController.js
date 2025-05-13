@@ -2,7 +2,7 @@ const comunidad_linguisticaModel = require('../models/comunidad_linguistica');
 
 const renderView = (view) => (req, res) => {
     res.render(view, {
-        title: 'Añadir Comunidad Linguistica'
+        title: 'Añadir Comunidad Lingüistica'
     });
 };
 
@@ -25,7 +25,7 @@ exports.getComunidad_Linguistica = async (req, res) => {
     try {
         const comunidades = await comunidad_linguisticaModel.getComunidad_Linguistica();
         res.render('tables/comunidad_linguistica', { 
-            title: 'Comunidades Linguisticas',
+            title: 'Comunidades Lingüisticas',
             comunidades 
         });
     } catch (error) {
@@ -49,7 +49,7 @@ exports.getComunidadById = async (req, res) => {
     try {
         const comunidad = await comunidad_linguisticaModel.getComunidadById(req.params.id);
         res.render('update/comunidad_linguistica', { 
-            title: 'Actualizar Comunidad Linguistica',
+            title: 'Actualizar Comunidad Lingüistica',
             comunidad 
         });
     } catch (error) {

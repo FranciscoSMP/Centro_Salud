@@ -11,7 +11,7 @@
         <label for="Id_Departamento" class="form-label">Departamento <font color="red">*</font></label>
         <select name="Id_Departamento" id="Id_Departamento" class="form-control" required
             aria-label="Seleccione un departamento">
-            <option value="" disabled selected>Seleccione un departamento</option>
+            <option value="" disabled selected>Seleccione un campo</option>
             {{#each departamentos}}
             <option value="{{this.Id_Departamento}}">{{this.Nombre_Departamento}}</option>
             {{/each}}

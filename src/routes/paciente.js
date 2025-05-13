@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const pacienteController = require('../controllers/pacienteController');
+const { ensureAuthenticated } = require('../lib/auth');
 
-router.get('/add', pacienteController.paciente);
+router.get('/add', ensureAuthenticated, pacienteController.paciente);
 
-router.get('/table', pacienteController.getPaciente);
+router.get('/table', ensureAuthenticated, pacienteController.getPaciente);
 
-router.post('/guardar', pacienteController.addPaciente);
+router.post('/guardar', ensureAuthenticated, pacienteController.addPaciente);
 
-router.post('/actualizar', pacienteController.updatePaciente);
+router.post('/actualizar', ensureAuthenticated, pacienteController.updatePaciente);
 
-router.get('/editar/:id', pacienteController.getPacienteById);
+router.get('/editar/:id', ensureAuthenticated, pacienteController.getPacienteById);
 
-router.post('/eliminar/:id', pacienteController.deletePaciente);
+router.post('/eliminar/:id', ensureAuthenticated, pacienteController.deletePaciente);
 
 module.exports = router;
