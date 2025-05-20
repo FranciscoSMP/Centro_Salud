@@ -46,11 +46,6 @@ CREATE TABLE Pueblo (
     Nombre_Pueblo VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE Control (
-    Id_Control INT PRIMARY KEY IDENTITY(1,1),
-    Tipo_Control VARCHAR(50) NOT NULL
-);
-
 CREATE TABLE Discapacidad (
     Id_Discapacidad INT PRIMARY KEY IDENTITY(1,1),
     Tipo_Discapacidad VARCHAR(50) NOT NULL
@@ -102,9 +97,6 @@ CREATE TABLE Paciente (
     FOREIGN KEY (Id_Disapacidad) REFERENCES Discapacidad(Id_Discapacidad)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE,
-    FOREIGN KEY (Id_Control) REFERENCES Control(Id_Control)
-	ON DELETE CASCADE
-	ON UPDATE CASCADE,
     FOREIGN KEY (Id_Pueblo) REFERENCES Pueblo(Id_Pueblo)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE,
@@ -114,13 +106,10 @@ CREATE TABLE Paciente (
     FOREIGN KEY (Id_Departamento) REFERENCES Departamento(Id_Departamento)
 );
 
-CREATE TABLE Consulta(
+CREATE TABLE Tipo_Consulta(
     Id_Consulta INT PRIMARY KEY IDENTITY(1,1),
     Fecha_Consulta DATE NOT NULL,
-    DPI_Paciente VARCHAR(13) NOT NULL,
-    FOREIGN KEY (DPI_Paciente) REFERENCES Paciente(DPI)
-	ON DELETE CASCADE
-	ON UPDATE CASCADE
+    Tipo_Consulta VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Paciente_Consulta(
@@ -128,7 +117,7 @@ CREATE TABLE Paciente_Consulta(
     DPI_Paciente VARCHAR(13) NOT NULL,
     Id_Consulta INT NOT NULL,
     FOREIGN KEY (DPI_Paciente) REFERENCES Paciente(DPI),
-    FOREIGN KEY (Id_Consulta) REFERENCES Consulta(Id_Consulta)
+    FOREIGN KEY (Id_Consulta) REFERENCES Tipo_Consulta(Id_Consulta)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE
 );

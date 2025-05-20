@@ -7,45 +7,47 @@
 {{/if}}
 {{#ifCond user.Id_Rol '==' 1}}
 <div class="container my-4">
-
-<h2 class="text-center mb-4">Lista de Enfermeros </h2>
-
-<table class="table table-hover table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">DPI Enfermero</th>
-            <th scope="col">Primer Nombre</th>
-            <th scope="col">Segundo Nombre</th>
-            <th scope="col">Tercer Nombre</th>
-            <th scope="col">Primer Apellido</th>
-            <th scope="col">Segundo Apellido</th>
-            <th scope="col">ID Municipio</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each enfermeros}}
-        <tr>
-            <td>{{this.DPI_Enfermero}}</td>
-            <td>{{this.Primer_Nombre}}</td>
-            <td>{{this.Segundo_Nombre}}</td>
-            <td>{{this.Tercer_Nombre}}</td>
-            <td>{{this.Primer_Apellido}}</td>
-            <td>{{this.Segundo_Apellido}}</td>
-            <td>{{this.Id_Municipio}}</td>
-            <td>
-                <a href="/enfermero/editar/{{this.DPI_Enfermero}}" class="btn btn-sm btn-warning me-2" >Editar</a>
-                <p></p>
-                <form action="/enfermero/eliminar/{{this.DPI_Enfermero}}" method="POST" class="d-inline">
-                    <button type="submit" class="btn btn-sm btn-danger"
-                        onclick="return confirm('¿Está seguro de que desea eliminar datos del enfermero?');">Eliminar</button>
-                </form>
-            </td>
-        </tr>
-        
-        {{/each}}
-    </tbody>
-</table>
+    <h2 class="text-center mb-4">Lista de Enfermeros </h2>
+    {{#if enfermeros.length}}
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">DPI Enfermero</th>
+                <th scope="col">Primer Nombre</th>
+                <th scope="col">Segundo Nombre</th>
+                <th scope="col">Tercer Nombre</th>
+                <th scope="col">Primer Apellido</th>
+                <th scope="col">Segundo Apellido</th>
+                <th scope="col">ID Municipio</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each enfermeros}}
+            <tr>
+                <td>{{this.DPI_Enfermero}}</td>
+                <td>{{this.Primer_Nombre}}</td>
+                <td>{{this.Segundo_Nombre}}</td>
+                <td>{{this.Tercer_Nombre}}</td>
+                <td>{{this.Primer_Apellido}}</td>
+                <td>{{this.Segundo_Apellido}}</td>
+                <td>{{this.Id_Municipio}}</td>
+                <td>
+                    <a href="/enfermero/editar/{{this.DPI_Enfermero}}" class="btn btn-sm btn-warning me-2">Editar</a>
+                    <p></p>
+                    <button type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteModal"
+                        onclick="setDeleteModal('el enfermero con DPI', '{{this.DPI_Enfermero}}', 'enfermero', '{{this.DPI_Enfermero}}')">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <div class="alert alert-warning text-center">No hay enfermeros disponibles en este momento.</div>
+    {{/if}}
 </div>
 {{else ifCond user.Id_Rol '==' 2}}
 <h2 class="text-center my-4">Acceso Denegado</h2>

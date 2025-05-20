@@ -1,6 +1,6 @@
 const pacienteConsultaModel = require('../models/paciente_consulta');
 const pacienteModel = require('../models/paciente');
-const consultaModel = require('../models/consulta');
+const tipo_consultaModel = require('../models/tipo_consulta');
 
 const guardarDatos = (model, redirect) => async (req, res) => {
     try {
@@ -16,11 +16,11 @@ const guardarDatos = (model, redirect) => async (req, res) => {
 exports.pacienteConsulta = async (req, res) => {
     try {
         const pacientes = await pacienteModel.getPaciente();
-        const consultas = await consultaModel.getConsulta();
+        const tipo_consultas = await tipo_consultaModel.getTipo_Consulta();
         res.render('add/pacienteConsulta', { 
             title: 'Añadir Paciente Consulta',
             pacientes, 
-            consultas
+            tipo_consultas
         });
     } catch (error) {
         console.error(error);
@@ -69,12 +69,12 @@ exports.getPacienteConsultaById = async (req, res) => {
     try {
         const pacienteConsulta = await pacienteConsultaModel.getPacienteConsultaById(req.params.id);
         const pacientes = await pacienteModel.getPaciente();
-        const consultas = await consultaModel.getConsulta();
+        const tipo_consultas = await tipo_consultaModel.getConsulta();
         res.render('update/pacienteConsulta', { 
             title: 'Actualizar Paciente Consulta',
             pacienteConsulta,
             pacientes,
-            consultas 
+            tipo_consultas 
         });
     } catch (error) {
         console.error(error);

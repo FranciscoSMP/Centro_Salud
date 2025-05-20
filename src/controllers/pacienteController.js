@@ -3,7 +3,6 @@ const escolaridadModel = require('../models/escolaridad');
 const comunidadModel = require('../models/comunidad_linguistica');
 const profesionModel = require('../models/profesion');
 const discapacidadModel = require('../models/discapacidad');
-const controlModel = require('../models/control');
 const puebloModel = require('../models/pueblo');
 const municipioModel = require('../models/municipio');
 const departamentoModel = require('../models/departamento');
@@ -27,14 +26,13 @@ exports.paciente = async (req, res) => {
         const comunidades = await comunidadModel.getComunidad_Linguistica();
         const profesiones = await profesionModel.getProfesion();
         const discapacidades = await discapacidadModel.getDiscapacidad();
-        const controles = await controlModel.getControl();
         const pueblos = await puebloModel.getPueblo();
         const municipios = await municipioModel.getMunicipio();
         const departamentos = await departamentoModel.getDepartamento();
         
         res.render('add/paciente', {
             title: 'Añadir Paciente',
-            escolaridades, comunidades, profesiones, discapacidades, controles, pueblos, municipios, departamentos
+            escolaridades, comunidades, profesiones, discapacidades, pueblos, municipios, departamentos
         });
     } catch (error) {
         console.error(error);
@@ -81,7 +79,6 @@ exports.getPacienteById = async (req, res) => {
         const comunidades = await comunidadModel.getComunidad_Linguistica();
         const profesiones = await profesionModel.getProfesion();
         const discapacidades = await discapacidadModel.getDiscapacidad();
-        const controles = await controlModel.getControl();
         const pueblos = await puebloModel.getPueblo();
         const municipios = await municipioModel.getMunicipio();
         const departamentos = await departamentoModel.getDepartamento();
@@ -97,7 +94,6 @@ exports.getPacienteById = async (req, res) => {
             comunidades,
             profesiones,
             discapacidades,
-            controles,
             pueblos,
             municipios,
             departamentos

@@ -1,0 +1,17 @@
+<h2 class="text-center my-4">Añadir Tipo de Consulta</h2>
+<form action="/tipo_consulta/guardar" method="POST" class="container form-General">
+    <div class="form-group mb-3">
+        <p><font color="red">*</font> Son campos obligatorios</p>
+        <label for="Fecha_Consulta" class="form-label">Fecha de Consulta <font color="red">*</font></label>
+        <input type="date" name="Fecha_Consulta" id="Fecha_Consulta" class="form-control" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="Tipo_Consulta" class="form-label">Tipo de Consulta <font color="red">*</font></label>
+        <input type="text" name="Tipo_Consulta" id="Tipo_Consulta" class="form-control" required>
+    </div>
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary">Añadir</button>
+    <a href="/" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+

@@ -43,13 +43,12 @@ app.use(require('./routes/index'));
 app.use('/departamento', require('./routes/departamento'));
 app.use('/municipio', require('./routes/municipio'));
 app.use('/pueblo', require('./routes/pueblo'));
-app.use('/control', require('./routes/control'));
 app.use('/discapacidad', require('./routes/discapacidad'));
 app.use('/profesion', require('./routes/profesion'));
 app.use('/comunidad_linguistica', require('./routes/comunidad_linguistica'));
 app.use('/escolaridad', require('./routes/escolaridad'));
 app.use('/paciente', require('./routes/paciente'));
-app.use('/consulta', require('./routes/consulta'));
+app.use('/tipo_consulta', require('./routes/tipo_consulta'));
 app.use('/enfermero', require('./routes/enfermero'));
 app.use('/paciente_consulta', require('./routes/pacienteConsulta'));
     

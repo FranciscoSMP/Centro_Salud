@@ -21,7 +21,6 @@
             <div id="flush-collapse-{{this.DPI}}" class="accordion-collapse collapse"
                 aria-labelledby="flush-heading-{{this.DPI}}" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    <!-- Tabla para la información del paciente -->
                     <table class="table table-bordered table-sm">
                         <tbody>
                             <tr>
@@ -94,13 +93,13 @@
                             </tr>
                         </tbody>
                     </table>
-                    <!-- Botones de acción centrados -->
                     <center>
                         <a href="/paciente/editar/{{this.DPI}}" class="btn btn-warning">Editar</a>
-                        <form action="/paciente/eliminar/{{this.DPI}}" method="POST" style="display:inline;">
-                            <button type="submit" class="btn btn-danger"
-                                onclick="return confirm('¿Está seguro de que desea eliminar este paciente?');">Eliminar</button>
-                        </form>
+                        <button type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#confirmDeleteModal"
+                            onclick="setDeleteModal('el paciente con DPI', '{{this.DPI}}', 'paciente', '{{this.DPI}}')">
+                            Eliminar
+                        </button>
                     </center>
                 </div>
             </div>

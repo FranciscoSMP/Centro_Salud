@@ -7,32 +7,37 @@
 {{/if}}
 {{#ifCond user.Id_Rol '==' 1}}
 <div class="container my-4">
-<h2 class="text-center mb-4">Lista de Comunidades Lingüísticas</h2>
-<table class="table table-hover table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre de la Comunidad</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each comunidades}}
-        <tr>
-            <td>{{this.Id_Comunidad_Linguistica}}</td>
-            <td>{{this.Nombre_Comunidad_Linguistica}}</td>
-            <td>
-                <a href="/comunidad_linguistica/editar/{{this.Id_Comunidad_Linguistica}}" class="btn btn-sm btn-warning me-2">Editar</a>
-                <button type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+    <h2 class="text-center mb-4">Lista de Comunidades Lingüísticas</h2>
+    {{#if comunidades.length}}
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre de la Comunidad</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each comunidades}}
+            <tr>
+                <td>{{this.Id_Comunidad_Linguistica}}</td>
+                <td>{{this.Nombre_Comunidad_Linguistica}}</td>
+                <td>
+                    <a href="/comunidad_linguistica/editar/{{this.Id_Comunidad_Linguistica}}"
+                        class="btn btn-sm btn-warning me-2">Editar</a>
+                    <button type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal"
                         data-bs-target="#confirmDeleteModal"
                         onclick="setDeleteModal('la comunidad lingüística', '{{this.Nombre_Comunidad_Linguistica}}', 'comunidad_linguistica', '{{this.Id_Comunidad_Linguistica}}')">
                         Eliminar
-                </button>
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+                    </button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <div class="alert alert-warning text-center">No hay comunidades lingüísticas disponibles en este momento.</div>
+    {{/if}}
 </div>
 {{else ifCond user.Id_Rol '==' 2}}
 <h2 class="text-center my-4">Acceso Denegado</h2>
