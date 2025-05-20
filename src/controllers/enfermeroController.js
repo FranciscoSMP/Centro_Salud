@@ -53,10 +53,11 @@ exports.updateEnfermero = async (req, res) => {
 
 exports.getEnfermeroById = async (req, res) => {
     try {
+        const municipio = await municipioModel.getMunicipio();
         const enfermero = await enfermeroModel.getEnfermeroById(req.params.id);
         res.render('update/enfermero', { 
             title: 'Actualizar Enfermeros',
-            enfermero 
+            enfermero, municipio 
         });
     } catch (error) {
         console.error(error);

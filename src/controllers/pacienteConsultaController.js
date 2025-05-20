@@ -68,9 +68,13 @@ exports.updatePacienteConsulta = async (req, res) => {
 exports.getPacienteConsultaById = async (req, res) => {
     try {
         const pacienteConsulta = await pacienteConsultaModel.getPacienteConsultaById(req.params.id);
+        const pacientes = await pacienteModel.getPaciente();
+        const consultas = await consultaModel.getConsulta();
         res.render('update/pacienteConsulta', { 
             title: 'Actualizar Paciente Consulta',
-            pacienteConsulta 
+            pacienteConsulta,
+            pacientes,
+            consultas 
         });
     } catch (error) {
         console.error(error);

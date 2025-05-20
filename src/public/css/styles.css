@@ -236,6 +236,14 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
+.btn-secondary {
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
 /* Estilos para las etiquetas */
 .form-label {
     font-weight: bold;
@@ -259,7 +267,6 @@ button[type="submit"] {
     color: #721c24;
 }
 
-/* Estilos para la tabla de departamentos */
 .table-hover tbody tr:hover {
     background-color: #f1f1f1;
 }
@@ -334,3 +341,67 @@ button[type="submit"] {
     z-index: 1000;
     width: 125%;
 }
+
+/* Estilo para el acordeón */
+.accordion-button {
+    background-color: #ecebeb; /* Color de fondo del botón */
+    color: rgb(0, 0, 0); /* Color del texto */
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #000000; /* Color del botón al estar desplegado */
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: none; /* Elimina el borde de enfoque */
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.accordion-body {
+    background-color: #f8f9fa; /* Color de fondo del contenido del acordeón */
+    padding: 20px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.accordion-body p {
+    margin: 0 0 10px;
+}
+
+.accordion-body a.btn {
+    margin-right: 10px;
+}
+
+.accordion-body:hover {
+    background-color: #f1f1f1; /* Color de fondo al pasar el mouse sobre el contenido */
+}
+
+/* Estilo para el separador de los items */
+.accordion-item + .accordion-item {
+    border-top: 1px solid #ccc;
+}
+
+/* Personalización del borde cuando el acordeón está abierto */
+.accordion-collapse.show {
+    border-top: none;
+}
+
+/* Estilos para el footer en la página index */
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+

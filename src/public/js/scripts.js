@@ -14,3 +14,9 @@ window.onload = function() {
         }, time + fade);
     }
 };
+
+function setDeleteModal(desc, name, type, id) {
+    document.getElementById('desc').innerText = desc;
+    document.getElementById('itemName').innerText = name;
+    document.getElementById('deleteForm').action = `/${type}/eliminar/${id}`;
+}

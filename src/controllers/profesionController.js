@@ -25,7 +25,7 @@ exports.getProfesion = async (req, res) => {
     try {
         const profesion = await profesionModel.getProfesion();
         res.render('tables/profesion', { 
-            title: 'Profesion',
+            title: 'Profesiones',
             profesion 
         });
     } catch (error) {

@@ -23,10 +23,11 @@
             <td>{{this.Nombre_Comunidad_Linguistica}}</td>
             <td>
                 <a href="/comunidad_linguistica/editar/{{this.Id_Comunidad_Linguistica}}" class="btn btn-sm btn-warning me-2">Editar</a>
-                <form action="/comunidad_linguistica/eliminar/{{this.Id_Comunidad_Linguistica}}" method="POST" class="d-inline">
-                    <button type="submit" class="btn btn-sm btn-danger" 
-                        onclick="return confirm('¿Está seguro de que desea eliminar esta comunidad lingüística?');">Eliminar</button>
-                </form>
+                <button type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteModal"
+                        onclick="setDeleteModal('la comunidad lingüística', '{{this.Nombre_Comunidad_Linguistica}}', 'comunidad_linguistica', '{{this.Id_Comunidad_Linguistica}}')">
+                        Eliminar
+                </button>
             </td>
         </tr>
         {{/each}}

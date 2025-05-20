@@ -24,8 +24,12 @@
             <input type="text" name="Segundo_Apellido" id="Segundo_Apellido" class="form-control" value="{{enfermero.Segundo_Apellido}}">
         </div>
         <div class="col-md-4 mb-3">
-            <label for="Id_Municipio">Ingrese ID del Municipio</label>
-            <input type="text" name="Id_Municipio" id="Id_Municipio" class="form-control" value="{{enfermero.Id_Municipio}}" required>
+            <label for="Id_Municipio">Municipio</label>
+            <select name="Id_Municipio" id="Id_Municipio" class="form-control">
+                {{#each municipio}}
+                <option value="{{this.Id_Municipio}}" {{#ifCond this.Id_Municipio '==' ../paciente.Id_Municipio}}selected{{/ifCond}}>{{this.Nombre_Municipio}}</option>
+                {{/each}}
+            </select>
         </div>
     </div>
     <div class="text-center">

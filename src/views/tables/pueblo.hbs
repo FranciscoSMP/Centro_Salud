@@ -7,31 +7,36 @@
 {{/if}}
 {{#ifCond user.Id_Rol '==' 1}}
 <div class="container my-4">
-<h2 class="text-center mb-4">Lista de Pueblos</h2>
-<table class="table table-hover table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre del Pueblo</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each pueblo}}
-        <tr>
-            <td>{{this.Id_Pueblo}}</td>
-            <td>{{this.Nombre_Pueblo}}</td>
-            <td>
-                <a href="/pueblo/editar/{{this.Id_Pueblo}}" class="btn btn-sm btn-warning me-2">Editar</a>
-                <form action="/pueblo/eliminar/{{this.Id_Pueblo}}" method="POST" class="d-inline">
-                    <button type="submit" class="btn btn-sm btn-danger" 
-                        onclick="return confirm('¿Está seguro de que desea eliminar el Pueblo?');">Eliminar</button>
-                </form>
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+    <h2 class="text-center mb-4">Lista de Pueblos</h2>
+    {{#if pueblo.length}}
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre del Pueblo</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each pueblo}}
+            <tr>
+                <td>{{this.Id_Pueblo}}</td>
+                <td>{{this.Nombre_Pueblo}}</td>
+                <td>
+                    <a href="/pueblo/editar/{{this.Id_Pueblo}}" class="btn btn-sm btn-warning me-2">Editar</a>
+                    <button type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteModal"
+                        onclick="setDeleteModal('el pueblo', '{{this.Nombre_Pueblo}}', 'pueblo', '{{this.Id_Pueblo}}')">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <div class="alert alert-warning text-center">No hay pueblos disponibles en este momento.</div>
+    {{/if}}
 </div>
 {{else ifCond user.Id_Rol '==' 2}}
 <h2 class="text-center my-4">Acceso Denegado</h2>

@@ -61,13 +61,16 @@ exports.updateConsulta = async (req, res) => {
 exports.getConsultaById = async (req, res) => {
     try {
         const consulta = await consultaModel.getConsultaById(req.params.id);
+        const pacientes = await pacienteModel.getPaciente();
         const formattedConsulta = {
             ...consulta,
             Fecha_Consulta: format(new Date(consulta.Fecha_Consulta), 'yyyy-MM-dd')
         };
         res.render('update/consulta', { 
             title: 'Actualizar Consulta',
-            consulta: formattedConsulta });
+            consulta: formattedConsulta,
+            pacientes
+         });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener la consulta');

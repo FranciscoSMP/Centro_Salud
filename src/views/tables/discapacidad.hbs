@@ -8,6 +8,7 @@
 {{#ifCond user.Id_Rol '==' 1}}
 <div class="container my-4">
 <h2 class="text-center mb-4">Lista de Discapacidades</h2>
+{{#if discapacidad.length}}
 <table class="table table-hover table-bordered">
     <thead class="thead-dark">
         <tr>
@@ -23,14 +24,18 @@
             <td>{{this.Tipo_Discapacidad}}</td>
             <td>
                 <a href="/discapacidad/editar/{{this.Id_Discapacidad}}" class="btn btn-sm btn-warning me-2">Editar</a>
-                <form action="/discapacidad/eliminar/{{this.Id_Discapacidad}}" method="POST" class="d-inline">
-                    <button type="submit" class="btn btn-sm btn-danger" 
-                        onclick="return confirm('¿Está seguro de que desea eliminar la Discapacidad?');">Eliminar</button>
-                </form>
+                <button type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteModal"
+                        onclick="setDeleteModal('la discapacidad', '{{this.Tipo_Discapacidad}}', 'discapacidad', '{{this.Id_Discapacidad}}')">
+                        Eliminar
+                </button>
             </td>
         </tr>
         {{/each}}
     </tbody>
+    {{else}}
+    <div class="alert alert-warning text-center">No hay discapacidades disponibles en este momento.</div>
+    {{/if}}
 </table>
 </div>
 {{else ifCond user.Id_Rol '==' 2}}

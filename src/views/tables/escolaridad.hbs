@@ -23,10 +23,11 @@
             <td>{{this.Nivel_Escolaridad}}</td>
             <td>
                 <a href="/escolaridad/editar/{{this.Id_Escolaridad}}" class="btn btn-sm btn-warning me-2">Editar</a>
-                <form action="/escolaridad/eliminar/{{this.Id_Escolaridad}}" method="POST" class="d-inline">
-                    <button type="submit" class="btn btn-sm btn-danger"
-                        onclick="return confirm('¿Está seguro de que desea eliminar la escolaridad?');">Eliminar</button>
-                </form>
+                <button type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteModal"
+                        onclick="setDeleteModal('la escolaridad', '{{this.Nivel_Escolaridad}}', 'escolaridad', '{{this.Id_Escolaridad}}')">
+                        Eliminar
+                </button>
             </td>
         </tr>
         {{/each}}

@@ -5,61 +5,109 @@
     </div>
 </div>
 {{/if}}
-<h2>Lista de Pacientes</h2>
-<table>
-    <thead>
-        <tr>
-            <th>DPI</th>
-            <th>Primer Nombre</th>
-            <th>Segundo Nombre</th>
-            <th>Tercer Nombre</th>
-            <th>Primer Apellido</th>
-            <th>Segundo Apellido</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Telefono</th>
-            <th>IGGS</th>
-            <th>Genero</th>
-            <th>ID Escolaridad</th>
-            <th>ID Comunidad Linguistica</th>
-            <th>ID Profesion</th>
-            <th>ID Disapacidad</th>
-            <th>ID Control</th>
-            <th>ID Pueblo</th>
-            <th>ID Municipio</th>
-            <th>ID Departamento</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="container my-4">
+    <h2 class="text-center mb-4">Lista de Pacientes</h2>
+    {{#if pacientes.length}}
+    <div class="accordion accordion-flush" id="accordionFlushExample">
         {{#each pacientes}}
-        <tr>
-            <td>{{this.DPI}}</td>
-            <td>{{this.Primer_nombre}}</td>
-            <td>{{this.Segundo_nombre}}</td>
-            <td>{{this.Tercer_nombre}}</td>
-            <td>{{this.Primer_apellido}}</td>
-            <td>{{this.Segundo_apellido}}</td>
-            <td>{{this.Fecha_nacimiento}}</td>
-            <td>{{this.Telefono}}</td>
-            <td>{{this.IGSS}}</td>
-            <td>{{this.Genero}}</td>
-            <td>{{this.Id_Escolaridad}}</td>
-            <td>{{this.Id_Comunidad_Linguistica}}</td>
-            <td>{{this.Id_Profesion}}</td>
-            <td>{{this.Id_Disapacidad}}</td>
-            <td>{{this.Id_Control}}</td>
-            <td>{{this.Id_Pueblo}}</td>
-            <td>{{this.Id_Municipio}}</td>
-            <td>{{this.Id_Departamento}}</td>
-            <td>
-                <a href="/paciente/editar/{{this.DPI}}">Editar</a>
-                <form action="/paciente/eliminar/{{this.DPI}}" method="POST"
-                    style="display:inline;">
-                    <button type="submit"
-                        onclick="return confirm('¿Está seguro de que desea eliminar este paciente?');">Eliminar</button>
-                </form>
-            </td>
-        </tr>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-{{this.DPI}}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse-{{this.DPI}}" aria-expanded="false"
+                    aria-controls="flush-collapse-{{this.DPI}}">
+                    DPI: {{this.DPI}}
+                </button>
+            </h2>
+            <div id="flush-collapse-{{this.DPI}}" class="accordion-collapse collapse"
+                aria-labelledby="flush-heading-{{this.DPI}}" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <!-- Tabla para la información del paciente -->
+                    <table class="table table-bordered table-sm">
+                        <tbody>
+                            <tr>
+                                <th>Primer Nombre</th>
+                                <td>{{this.Primer_nombre}}</td>
+                            </tr>
+                            <tr>
+                                <th>Segundo Nombre</th>
+                                <td>{{this.Segundo_nombre}}</td>
+                            </tr>
+                            <tr>
+                                <th>Tercer Nombre</th>
+                                <td>{{this.Tercer_nombre}}</td>
+                            </tr>
+                            <tr>
+                                <th>Primer Apellido</th>
+                                <td>{{this.Primer_apellido}}</td>
+                            </tr>
+                            <tr>
+                                <th>Segundo Apellido</th>
+                                <td>{{this.Segundo_apellido}}</td>
+                            </tr>
+                            <tr>
+                                <th>Fecha de Nacimiento</th>
+                                <td>{{this.Fecha_nacimiento}}</td>
+                            </tr>
+                            <tr>
+                                <th>Teléfono</th>
+                                <td>{{this.Telefono}}</td>
+                            </tr>
+                            <tr>
+                                <th>IGSS</th>
+                                <td>{{this.IGSS}}</td>
+                            </tr>
+                            <tr>
+                                <th>Género</th>
+                                <td>{{this.Genero}}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Escolaridad</th>
+                                <td>{{this.Id_Escolaridad}}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Comunidad Lingüística</th>
+                                <td>{{this.Id_Comunidad_Linguistica}}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Profesión</th>
+                                <td>{{this.Id_Profesion}}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Discapacidad</th>
+                                <td>{{this.Id_Disapacidad}}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Control</th>
+                                <td>{{this.Id_Control}}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Pueblo</th>
+                                <td>{{this.Id_Pueblo}}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Municipio</th>
+                                <td>{{this.Id_Municipio}}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Departamento</th>
+                                <td>{{this.Id_Departamento}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Botones de acción centrados -->
+                    <center>
+                        <a href="/paciente/editar/{{this.DPI}}" class="btn btn-warning">Editar</a>
+                        <form action="/paciente/eliminar/{{this.DPI}}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('¿Está seguro de que desea eliminar este paciente?');">Eliminar</button>
+                        </form>
+                    </center>
+                </div>
+            </div>
+        </div>
         {{/each}}
-    </tbody>
-</table>
+    </div>
+    {{else}}
+        <div class="alert alert-warning text-center">No hay pacientes disponibles en este momento.</div>
+    {{/if}}
+</div>

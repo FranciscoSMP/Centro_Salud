@@ -1,12 +1,12 @@
 const pool = require('../keys');
 
-const ejecutarSQLServer = async (query) => {
-    const conSQL = await pool.poolPromise;
-    await conSQL.request().query(query);
+const guardarEnBaseDatos = async (querySQLServer) => {
+    return ejecutarSQLServer(querySQLServer);
 };
 
-const guardarEnBaseDatos = async (querySQLServer) => {
-    ejecutarSQLServer(querySQLServer)
+const ejecutarSQLServer = async (query) => {
+    const conSQL = await pool.poolPromise;
+    return conSQL.request().query(query);
 };
 
 exports.addComunidad_Linguistica= async ({ Nombre_Comunidad_Linguistica }) => {

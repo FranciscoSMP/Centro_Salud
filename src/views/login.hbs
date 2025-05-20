@@ -1,23 +1,26 @@
-<div class="container login-container mt-5">
-    <h2 class="text-center login-title">Iniciar Sesión</h2>
-    <form action="/login" method="POST">
-        {{#if error_msg}}
+<body class="footer-fixed">
+    <div class="container login-container mt-5">
+        <h2 class="text-center login-title">Iniciar Sesión</h2>
+        <form action="/login" method="POST">
+            {{#if error_msg}}
             <div id="success-alert" class="alert alert-danger fade-out">{{error_msg}}</div>
-        {{else if error}}
+            {{else if error}}
             <div class="alert alert-danger">{{error}}</div>
-        {{/if}}
-        <div class="form-group">
-            <label for="username">Nombre de Usuario:</label>
-            <input type="text" name="username" class="form-control" placeholder="Ingrese su usuario" required>
-        </div>
-        <p></p>
-        <div class="form-group">
-            <label for="password">Contraseña:</label>
-            <input type="password" name="password" class="form-control" placeholder="Ingrese su contraseña" required>
-        </div>
-        <p></p>
-        <center>
-            <button  type="submit" class="btn btn-primary btn-block login-btn">Ingresar</button>
-        </center>
-    </form>
-</div>
+            {{/if}}
+            <div class="form-group">
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" name="username" class="form-control" placeholder="Ingrese su usuario" required>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" class="form-control" placeholder="Ingrese su contraseña"
+                    required>
+            </div>
+            <p></p>
+            <center>
+                <button type="submit" class="btn btn-primary btn-block login-btn">Ingresar</button>
+            </center>
+        </form>
+    </div>
+</body>

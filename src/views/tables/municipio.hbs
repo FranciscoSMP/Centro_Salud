@@ -8,6 +8,7 @@
 {{#ifCond user.Id_Rol '==' 1}}
 <div class="container my-4">
     <h2 class="text-center mb-4">Lista de Municipios</h2>
+    {{#if municipio.length}}
     <table class="table table-hover table-bordered">
         <thead class="thead-dark">
             <tr>
@@ -25,15 +26,18 @@
                 <td>{{this.Nombre_Departamento}}</td>
                 <td>
                     <a href="/municipio/editar/{{this.Id_Municipio}}" class="btn btn-sm btn-warning me-2">Editar</a>
-                    <form action="/municipio/eliminar/{{this.Id_Municipio}}" method="POST" class="d-inline">
-                        <button type="submit" class="btn btn-sm btn-danger" 
-                            onclick="return confirm('¿Está seguro de que desea eliminar este Municipio?');">Eliminar</button>
-                    </form>
-                </td>
+                    <button type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteModal"
+                        onclick="setDeleteModal('el municipio', '{{this.Nombre_Municipio}}', 'municipio', '{{this.Id_Municipio}}')">
+                        Eliminar
+                    </button>
             </tr>
             {{/each}}
         </tbody>
     </table>
+    {{else}}
+    <div class="alert alert-warning text-center">No hay municipios disponibles en este momento.</div>
+    {{/if}}
 </div>
 {{else ifCond user.Id_Rol '==' 2}}
 <h2 class="text-center my-4">Acceso Denegado</h2>
