@@ -81,7 +81,6 @@ CREATE TABLE Paciente (
     Id_Comunidad_Linguistica INT NOT NULL,
     Id_Profesion INT NOT NULL,
     Id_Disapacidad INT NOT NULL,
-    Id_Control INT NOT NULL,
     Id_Pueblo INT NOT NULL,
     Id_Municipio INT NOT NULL,
     Id_Departamento INT NOT NULL,

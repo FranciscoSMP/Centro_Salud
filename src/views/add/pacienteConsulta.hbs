@@ -13,8 +13,8 @@
         <label for="Id_Consulta" class="form-label">Consulta <font color="red">*</font></label>
         <select name="Id_Consulta" id="Id_Consulta" class="form-control" required>
                 <option value=""disable selected > seleccione un campo </option>
-            {{#each consultas}}
-                <option value="{{this.Id_Consulta}}"> {{this.Id_Consulta}} </option>
+            {{#each tipo_consultas}}
+                <option value="{{this.Id_Consulta}}">{{this.Tipo_Consulta}} </option>
             {{/each}}
         </select>
     </div>

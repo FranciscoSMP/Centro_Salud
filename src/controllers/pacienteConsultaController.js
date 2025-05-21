@@ -69,7 +69,7 @@ exports.getPacienteConsultaById = async (req, res) => {
     try {
         const pacienteConsulta = await pacienteConsultaModel.getPacienteConsultaById(req.params.id);
         const pacientes = await pacienteModel.getPaciente();
-        const tipo_consultas = await tipo_consultaModel.getConsulta();
+        const tipo_consultas = await tipo_consultaModel.getTipo_Consulta();
         res.render('update/pacienteConsulta', { 
             title: 'Actualizar Paciente Consulta',
             pacienteConsulta,
@@ -78,6 +78,6 @@ exports.getPacienteConsultaById = async (req, res) => {
         });
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error al obtener la comunidad lingüística');
+        res.status(500).send('Error al obtener la relación paciente - consulta');
     }
 };

@@ -25,7 +25,7 @@ body {
 
 /* Estilos para el pie de página */
 footer {
-    background-color: #007bff;
+    background-color: #23c4bf;
     color: white;
     padding: 1em 0;
     text-align: center;
@@ -53,7 +53,7 @@ footer p {
 .index-title {
     font-size: 3rem;
     font-weight: 700;
-    color: #007bff;
+    color: #23c4bf;
     margin-bottom: 20px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
@@ -73,7 +73,7 @@ footer p {
 }
 
 .welcome-btn:hover {
-    background-color: #0056b3;
+    background-color: #9DBDC4;
     color: #fff;
 }
 
@@ -95,7 +95,7 @@ h1, h2 {
 .login-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #007bff;
+    color: #23c4bf;
     margin-bottom: 30px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -139,7 +139,7 @@ select.form-control:focus option {
 }
 
 .login-btn:hover {
-    background-color: #0056b3;
+    background-color: #9DBDC4;
     color: #fff;
 }
 
@@ -237,6 +237,15 @@ button[type="submit"] {
 }
 
 .btn-secondary {
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #23c4bf;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
@@ -405,3 +414,6 @@ button[type="submit"] {
     width: 100%;
 }
 
+.custom-bg {
+    background-color: #E0F4F5; /* Puede elegir el color que desee */
+}

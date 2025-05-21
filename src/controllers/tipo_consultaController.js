@@ -38,7 +38,7 @@ exports.getTipo_Consulta = async (req, res) => {
             };
         });
         res.render('tables/tipo_consulta', { 
-            title: 'Comunidades Lingüisticas',
+            title: 'Tipo de Consultas',
             tipo_consultas: consultasFormateadas 
         });
     } catch (error) {

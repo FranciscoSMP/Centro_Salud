@@ -100,14 +100,6 @@
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Control">Control</label>
-            <select name="Id_Control" id="Id_Control" class="form-control" required>
-                {{#each controles}}
-                <option value="{{this.Id_Control}}" {{#ifCond this.Id_Control '==' ../paciente.Id_Control}}selected{{/ifCond}}>{{this.Tipo_Control}}</option>
-                {{/each}}
-            </select>
-        </div>
-        <div class="col-md-2 mb-3">
             <label for="Id_Pueblo">Pueblo</label>
             <select name="Id_Pueblo" id="Id_Pueblo" class="form-control" required>
                 {{#each pueblos}}

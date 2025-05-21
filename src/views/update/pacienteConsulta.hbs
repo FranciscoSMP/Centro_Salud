@@ -12,10 +12,10 @@
         <p></p>
         <label for="Id_Consulta" class="form-label">Consulta</label>
         <select name="Id_Consulta" id="Id_Consulta" class="form-control" required>
-            {{#each consultas}}
+            {{#each tipo_consultas}}
             <option value="{{this.Id_Consulta}}" {{#ifCond this.Id_Consulta '==' ../pacienteConsulta.Id_Consulta}}
                 selected {{/ifCond}}>
-                {{this.Id_Consulta}}</option>
+                {{this.Tipo_Consulta}}</option>
             {{/each}}
         </select>
     </div>
