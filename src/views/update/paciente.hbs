@@ -92,10 +92,10 @@
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Disapacidad">Discapacidad</label>
-            <select name="Id_Disapacidad" id="Id_Disapacidad" class="form-control" required>
+            <label for="Id_Discapacidad">Discapacidad</label>
+            <select name="Id_Discapacidad" id="Id_Discapacidad" class="form-control" required>
                 {{#each discapacidades}}
-                <option value="{{this.Id_Discapacidad}}" {{#ifCond this.Id_Discapacidad '==' ../paciente.Id_Disapacidad}}selected{{/ifCond}}>{{this.Tipo_Discapacidad}}</option>
+                <option value="{{this.Id_Discapacidad}}" {{#ifCond this.Id_Discapacidad '==' ../paciente.Id_Discapacidad}}selected{{/ifCond}}>{{this.Tipo_Discapacidad}}</option>
                 {{/each}}
             </select>
         </div>

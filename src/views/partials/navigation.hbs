@@ -1,55 +1,76 @@
 {{#ifCond user.Id_Rol '==' 1}}
 <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="light">
     <div class="custom-bg p-4">
-
         <a class="text-body-emphasis h4 no-underline" href="/dashboard">
             <h5>
-                <center>Centro de Salud</center>
+                <center><b>Centro de Salud</b></center>
             </h5>
         </a>
         <div class="d-flex justify-content-around mt-4">
             <div>
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link dropdown-toggle custom-border" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    Añadir Datos
+                    <b>Añadir Datos</b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/departamento/add">Departamento</a></li>
-                    <li><a class="dropdown-item" href="/municipio/add">Municipio</a></li>
-                    <li><a class="dropdown-item" href="/pueblo/add">Pueblo</a></li>
-                    <li><a class="dropdown-item" href="/discapacidad/add">Discapacidad</a></li>
-                    <li><a class="dropdown-item" href="/profesion/add">Profesión</a></li>
-                    <li><a class="dropdown-item" href="/comunidad_linguistica/add">Comunidad Lingüistica</a></li>
-                    <li><a class="dropdown-item" href="/escolaridad/add">Escolaridad</a></li>
-                    <li><a class="dropdown-item" href="/paciente/add">Paciente</a></li>
-                    <li><a class="dropdown-item" href="/tipo_consulta/add">Tipo de Consulta</a></li>
-                    <li><a class="dropdown-item" href="/enfermero/add">Enfermero</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/departamento/add"><i
+                                class="bi bi-geo-alt-fill me-2"></i>Departamento</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/municipio/add"><i
+                                class="bi bi-map-fill me-2"></i>Municipio</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/pueblo/add"><i
+                                class="bi bi-people-fill me-2"></i>Pueblo</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/discapacidad/add"><i
+                                class="bi bi-universal-access-circle me-2"></i>Discapacidad</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/profesion/add"><i
+                                class="bi bi-briefcase-fill me-2"></i>Profesión</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/comunidad_linguistica/add"><i
+                                class="bi bi-translate me-2"></i>Comunidad Lingüística</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/escolaridad/add"><i
+                                class="bi bi-book-half me-2"></i>Escolaridad</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/paciente/add"><i
+                                class="bi bi-person-lines-fill me-2"></i>Paciente</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/tipo_consulta/add"><i
+                                class="bi bi-clipboard2-pulse me-2"></i>Tipo de Consulta</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/enfermero/add"><i
+                                class="bi bi-person-badge-fill me-2"></i>Enfermero</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="/paciente_consulta/add">Paciente - Consulta</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/paciente_consulta/add"><i
+                                class="bi bi-journal-medical me-2"></i>Paciente - Consulta</a></li>
                 </ul>
             </div>
             <div>
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link dropdown-toggle custom-border" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    Datos Ingresados
+                    <b>Datos Ingresados</b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/departamento/table">Departamento</a></li>
-                    <li><a class="dropdown-item" href="/municipio/table">Municipio</a></li>
-                    <li><a class="dropdown-item" href="/pueblo/table">Pueblo</a></li>
-                    <li><a class="dropdown-item" href="/discapacidad/table">Discapacidad</a></li>
-                    <li><a class="dropdown-item" href="/profesion/table">Profesión</a></li>
-                    <li><a class="dropdown-item" href="/comunidad_linguistica/table">Comunidad Lingüistica</a></li>
-                    <li><a class="dropdown-item" href="/escolaridad/table">Escolaridad</a></li>
-                    <li><a class="dropdown-item" href="/paciente/table">Paciente</a></li>
-                    <li><a class="dropdown-item" href="/tipo_consulta/table">Tipo de Consulta</a></li>
-                    <li><a class="dropdown-item" href="/enfermero/table">Enfermero</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/departamento/table"><i
+                                class="bi bi-geo-alt-fill me-2"></i>Departamento</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/municipio/table"><i
+                                class="bi bi-map-fill me-2"></i>Municipio</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/pueblo/table"><i
+                                class="bi bi-people-fill me-2"></i>Pueblo</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/discapacidad/table"><i
+                                class="bi bi-universal-access-circle me-2"></i>Discapacidad</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/profesion/table"><i
+                                class="bi bi-briefcase-fill me-2"></i>Profesión</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/comunidad_linguistica/table"><i
+                                class="bi bi-translate me-2"></i>Comunidad Lingüística</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/escolaridad/table"><i
+                                class="bi bi-book-half me-2"></i>Escolaridad</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/paciente/table"><i
+                                class="bi bi-person-lines-fill me-2"></i>Paciente</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/tipo_consulta/table"><i
+                                class="bi bi-clipboard2-pulse me-2"></i>Tipo de Consulta</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/enfermero/table"><i
+                                class="bi bi-person-badge-fill me-2"></i>Enfermero</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="/paciente_consulta/table">Paciente - Consulta</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/paciente_consulta/table"><i
+                                class="bi bi-journal-medical me-2"></i>Paciente - Consulta</a></li>
                 </ul>
             </div>
         </div>
@@ -65,46 +86,51 @@
             </button>
         </div>
         <div class="d-flex ms-auto">
-            {{!-- <a href="/dashboard" class="btn btn-dark me-2">Inicio</a> --}}
             <a href="/logout" class="btn btn-danger">Cerrar Sesión</a>
         </div>
     </div>
 </nav>
 {{else ifCond user.Id_Rol '==' 2}}
 <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="light">
-    <div class="bg-light p-4">
+    <div class="custom-light p-4">
         <a class="text-body-emphasis h4 no-underline" href="/dashboard">
             <h5>
-                <center>Centro de Salud</center>
+                <center><b>Centro de Salud</b></center>
             </h5>
         </a>
         <div class="d-flex justify-content-around mt-4">
             <div>
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link dropdown-toggle custom-border" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    Añadir Datos
+                    <b>Añadir Datos</b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/paciente/add">Paciente</a></li>
-                    <li><a class="dropdown-item" href="/tipo_consulta/add">Tipo de Consulta</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/paciente/add"><i
+                                class="bi bi-person-lines-fill me-2"></i>Paciente</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/tipo_consulta/add"><i
+                                class="bi bi-clipboard2-pulse me-2"></i>Tipo de Consulta</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="/paciente_consulta/add">Paciente - Consulta</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/paciente_consulta/add"><i
+                                class="bi bi-journal-medical me-2"></i>Paciente - Consulta</a></li>
                 </ul>
             </div>
             <div>
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link dropdown-toggle custom-border" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    Datos Ingresados
+                    <b>Datos Ingresados</b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/paciente/table">Paciente</a></li>
-                    <li><a class="dropdown-item" href="/tipo_consulta/table">Tipo de Consulta</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/paciente/table"><i
+                                class="bi bi-person-lines-fill me-2"></i>Paciente</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/tipo_consulta/table"><i
+                                class="bi bi-clipboard2-pulse me-2"></i>Tipo de Consulta</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="/paciente_consulta/table">Paciente - Consulta</a></li>
+                    <li><a class="dropdown-item dropdown-item-custom" href="/paciente_consulta/table"><i
+                                class="bi bi-journal-medical me-2"></i>Paciente - Consulta</a></li>
                 </ul>
             </div>
         </div>
@@ -120,10 +146,8 @@
             </button>
         </div>
         <div class="d-flex ms-auto">
-            {{!-- <a href="/dashboard" class="btn btn-dark me-2">Inicio</a> --}}
             <a href="/logout" class="btn btn-danger">Cerrar Sesión</a>
         </div>
     </div>
 </nav>
 {{/ifCond}}
-

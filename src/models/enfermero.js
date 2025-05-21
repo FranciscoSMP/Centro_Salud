@@ -16,7 +16,18 @@ exports.addEnfermero= async ({ DPI_Enfermero, Primer_Nombre, Segundo_Nombre, Ter
 
 exports.getEnfermero = async () => {
     const conSQL = await pool.poolPromise;
-    const result = await conSQL.request().query('SELECT * FROM Enfermero');
+    const result = await conSQL.request().query(`
+        SELECT 
+        Enfermero.DPI_Enfermero, 
+        Enfermero.Primer_Nombre, 
+        Enfermero.Segundo_Nombre, 
+        Enfermero.Tercer_Nombre, 
+        Enfermero.Primer_Apellido,
+        Enfermero.Segundo_Apellido,
+        Municipio.Nombre_Municipio
+        FROM Enfermero
+        JOIN Municipio ON Municipio.Id_Municipio = Municipio.Id_Departamento
+        `);
     return result.recordset;
 };
 

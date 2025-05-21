@@ -17,7 +17,14 @@ exports.addPacienteConsulta = async ({ DPI_Paciente, Id_Consulta }) => {
 
 exports.getPacienteConsulta = async () => {
     const conSQL = await pool.poolPromise;
-    const result = await conSQL.request().query('SELECT * FROM Paciente_Consulta');
+    const result = await conSQL.request().query(`
+        SELECT 
+        Paciente_Consulta.Paciente_Consulta, 
+        Paciente_Consulta.DPI_Paciente,
+        Tipo_Consulta.Tipo_Consulta
+        FROM Paciente_Consulta
+        JOIN Tipo_Consulta ON Paciente_Consulta.Id_Consulta = Tipo_Consulta.Id_Consulta
+    `);
     return result.recordset;
 };
 

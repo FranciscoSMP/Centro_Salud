@@ -49,4 +49,3 @@ exports.getMunicipioWithDepartamento = async () => {
     `);
     return result.recordset;
 };
-

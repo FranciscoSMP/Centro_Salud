@@ -6,7 +6,8 @@
         </p>
         <div class="col-md-2 mb-3">
             <label for="DPI">DPI del Paciente <font color="red">*</font></label>
-            <input type="text" name="DPI" id="DPI" class="form-control" required>
+            <input type="number" name="DPI" id="DPI" class="form-control" maxlength="13"
+                oninput="this.value=this.value.slice(0,13);" required>
         </div>
         <div class="col-md-12">
             <div class="row">
@@ -38,7 +39,8 @@
         </div>
         <div class="col-md-2 mb-3">
             <label for="Telefono">Teléfono <font color="red">*</font></label>
-            <input type="text" name="Telefono" id="Telefono" class="form-control" required>
+            <input type="number" name="Telefono" id="Telefono" class="form-control" maxlength="8"
+                oninput="this.value=this.value.slice(0,8);" required>
         </div>
         <div class="col-md-2 mb-3">
             <label for="IGSS">IGSS <font color="red">*</font></label>
@@ -94,8 +96,8 @@
             </select>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="Id_Disapacidad">Discapacidad <font color="red">*</font></label>
-            <select name="Id_Disapacidad" id="Id_Disapacidad" class="form-control" required>
+            <label for="Id_Discapacidad">Discapacidad <font color="red">*</font></label>
+            <select name="Id_Discapacidad" id="Id_Discapacidad" class="form-control" required>
                 <option value="" disabled selected>Seleccione un campo</option>
                 {{#each discapacidades}}
                 <option value="{{this.Id_Discapacidad}}">{{this.Tipo_Discapacidad}}</option>

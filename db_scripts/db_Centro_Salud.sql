@@ -1,28 +1,27 @@
 create database Centro_Salud
 on primary (
-			name='bd.CentroSalud', 
-			filename='C:\basedatos\bd_centrosalud.mdf',
-			size=8mb,
-			maxsize=500mb,
-			filegrowth=10mb
-			)
-log on
-			(
-			name='bd.centrosalud_log', 
-			filename='C:\basedatos\bd_centrosalud.ldf',
-			size=8mb,
-			maxsize=100mb,
-			filegrowth=10mb
-			)
+    name='bd.CentroSalud', 
+	filename='C:\basedatos\bd_centrosalud.mdf',
+	size=8mb,
+	maxsize=500mb,
+	filegrowth=10mb
+)
+log on	(
+	name='bd.centrosalud_log', 
+	filename='C:\basedatos\bd_centrosalud.ldf',
+	size=8mb,
+	maxsize=100mb,
+	filegrowth=10mb
+)
 
 ALTER DATABASE Centro_Salud
 ADD FILE 
 (
-name='bd.CENTROSALUD1', 
-filename='C:\basedatos\bd_CENTROSALUD1.ndf',
-size=8mb,
-maxsize=500mb,
-filegrowth=10mb
+    name='bd.CENTROSALUD1', 
+    filename='C:\basedatos\bd_CENTROSALUD1.ndf',
+    size=8mb,
+    maxsize=500mb,
+    filegrowth=10mb
 )
 
 USE Centro_Salud;
@@ -80,7 +79,7 @@ CREATE TABLE Paciente (
     Id_Escolaridad INT NOT NULL,
     Id_Comunidad_Linguistica INT NOT NULL,
     Id_Profesion INT NOT NULL,
-    Id_Disapacidad INT NOT NULL,
+    Id_Discapacidad INT NOT NULL,
     Id_Pueblo INT NOT NULL,
     Id_Municipio INT NOT NULL,
     Id_Departamento INT NOT NULL,
@@ -93,7 +92,7 @@ CREATE TABLE Paciente (
     FOREIGN KEY (Id_Profesion) REFERENCES Profesion(Id_Profesion)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE,
-    FOREIGN KEY (Id_Disapacidad) REFERENCES Discapacidad(Id_Discapacidad)
+    FOREIGN KEY (Id_Discapacidad) REFERENCES Discapacidad(Id_Discapacidad)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE,
     FOREIGN KEY (Id_Pueblo) REFERENCES Pueblo(Id_Pueblo)
@@ -115,7 +114,9 @@ CREATE TABLE Paciente_Consulta(
 	Paciente_Consulta INT PRIMARY KEY IDENTITY(1,1),
     DPI_Paciente VARCHAR(13) NOT NULL,
     Id_Consulta INT NOT NULL,
-    FOREIGN KEY (DPI_Paciente) REFERENCES Paciente(DPI),
+    FOREIGN KEY (DPI_Paciente) REFERENCES Paciente(DPI)
+    ON DELETE CASCADE
+	ON UPDATE CASCADE,
     FOREIGN KEY (Id_Consulta) REFERENCES Tipo_Consulta(Id_Consulta)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE
@@ -131,7 +132,7 @@ CREATE TABLE Enfermero (
     Id_Municipio INT NOT NULL,
     FOREIGN KEY (Id_Municipio) REFERENCES Municipio(Id_Municipio)
 	ON DELETE CASCADE
-	ON UPDATE CASCADE,
+	ON UPDATE CASCADE
 );
 
 CREATE TABLE Rol (

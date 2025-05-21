@@ -15,4 +15,8 @@ router.get('/editar/:id', ensureAuthenticated, pacienteController.getPacienteByI
 
 router.post('/eliminar/:id', ensureAuthenticated, pacienteController.deletePaciente);
 
+router.get('/excel', pacienteController.exportarPacientesExcel);
+
+router.get('/pdf', pacienteController.exportarPacientesPDF);
+
 module.exports = router;

@@ -281,7 +281,7 @@ button[type="submit"] {
 }
 
 .table thead th {
-    background-color: #007bff;
+    background-color: #23c4bf;
     color: white;
     text-align: center;
 }
@@ -416,4 +416,53 @@ button[type="submit"] {
 
 .custom-bg {
     background-color: #E0F4F5; /* Puede elegir el color que desee */
+}
+
+.dropdown-item-custom {
+    font-weight: 500;
+    color: #00817D;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item-custom:hover {
+    background-color: #e9f5ff;
+    color: #5c715e;
+}
+
+.custom-border {
+    border: 2px solid #5a9696; /* Cambiar este código por el color deseado */
+    border-radius: 0.375rem; /* Equivalente a .rounded */
+    padding: 0.25rem 0.75rem; /* Equivalente a py-1 px-3 */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.custom-border:hover {
+    background-color: #e9f2ff;
+    color: #016367;
+}
+
+.form-btn {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 12px;
+    background-color: #23c4bf;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.form-btn:hover {
+    background-color: #9DBDC4;
+    color: #fff;
+}
+
+.export-btn {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease-in-out;
+    border-radius: 0.3rem;
+    
+}
+
+.export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }

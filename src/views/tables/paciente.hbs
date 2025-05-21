@@ -5,6 +5,16 @@
     </div>
 </div>
 {{/if}}
+<p></p>
+<div class="text-center mb-3">
+    <a href="/paciente/excel" class="btn btn-success btn-sm mx-1 export-btn">
+        <i class="bi bi-file-earmark-excel-fill me-1"></i> Exportar a Excel
+    </a>
+    <a href="/paciente/pdf" class="btn btn-danger btn-sm mx-1 export-btn">
+        <i class="bi bi-file-earmark-pdf-fill me-1"></i> Exportar a PDF
+    </a>
+</div>
+
 <div class="container my-4">
     <h2 class="text-center mb-4">Lista de Pacientes</h2>
     {{#if pacientes.length}}
@@ -60,32 +70,32 @@
                                 <td>{{this.Genero}}</td>
                             </tr>
                             <tr>
-                                <th>ID Escolaridad</th>
-                                <td>{{this.Id_Escolaridad}}</td>
+                                <th>Escolaridad</th>
+                                <td>{{this.Nivel_Escolaridad}}</td>
                             </tr>
                             <tr>
-                                <th>ID Comunidad Lingüística</th>
-                                <td>{{this.Id_Comunidad_Linguistica}}</td>
+                                <th>Comunidad Lingüística</th>
+                                <td>{{this.Nombre_Comunidad_Linguistica}}</td>
                             </tr>
                             <tr>
-                                <th>ID Profesión</th>
-                                <td>{{this.Id_Profesion}}</td>
+                                <th>Profesión</th>
+                                <td>{{this.Profesion_Oficio}}</td>
                             </tr>
                             <tr>
-                                <th>ID Discapacidad</th>
-                                <td>{{this.Id_Disapacidad}}</td>
+                                <th>Discapacidad</th>
+                                <td>{{this.Tipo_Discapacidad}}</td>
                             </tr>
                             <tr>
-                                <th>ID Pueblo</th>
-                                <td>{{this.Id_Pueblo}}</td>
+                                <th>Pueblo</th>
+                                <td>{{this.Nombre_Pueblo}}</td>
                             </tr>
                             <tr>
-                                <th>ID Municipio</th>
-                                <td>{{this.Id_Municipio}}</td>
+                                <th>Municipio</th>
+                                <td>{{this.Nombre_Municipio}}</td>
                             </tr>
                             <tr>
-                                <th>ID Departamento</th>
-                                <td>{{this.Id_Departamento}}</td>
+                                <th>Departamento</th>
+                                <td>{{this.Nombre_Departamento}}</td>
                             </tr>
                         </tbody>
                     </table>
